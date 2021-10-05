@@ -1,0 +1,102 @@
+@use "./variables";
+
+// For Mobile-----
+// Used for page and section header
+@mixin mobile-tall-font {
+  font-size: variables.$size * 1.5;
+  line-height: variables.$size * 2;
+  font-weight: variables.$heavy;
+}
+
+// Used for subheader
+@mixin mobile-medium-font {
+  font-size: variables.$size * 0.875;
+  line-height: variables.$size * 1.375;
+  font-weight: variables.$medium;
+}
+
+// Used for body and footer
+@mixin mobile-normal-font {
+  font-size: variables.$size * 0.8125;
+  line-height: variables.$size * 1.375;
+  font-weight: variables.$normal;
+}
+
+// Used for labels and buttons
+@mixin mobile-small-font {
+  font-size: variables.$size * 0.625;
+  line-height: variables.$size * 1.25;
+  font-weight: variables.$heavy;
+}
+
+// Tablet and desktop-----
+
+// Used for page header
+@mixin tallest-font {
+  font-size: variables.$size * 3.75;
+  line-height: variables.$size * 4.25;
+  font-weight: variables.$heavy;
+}
+
+// Used for section header
+@mixin tall-font {
+  font-size: variables.$size * 2.25;
+  line-height: variables.$size * 2.75;
+  font-weight: variables.$heavy;
+}
+
+// Used for subheader
+@mixin medium-font {
+  font-size: variables.$size * 1.5;
+  line-height: variables.$size * 2;
+  font-weight: variables.$medium;
+}
+
+// Used for body and footer
+@mixin normal-font {
+  font-size: variables.$size * 0.875;
+  line-height: variables.$size * 1.25;
+  font-weight: variables.$normal;
+}
+
+// Used for labels and buttons
+@mixin small-font {
+  font-size: variables.$size * 0.75;
+  line-height: variables.$size * 1.25;
+  font-weight: variables.$heavy;
+}
+
+// Padding Mobile ------
+@mixin mobile-header-space {
+  margin: 1.5rem 0 1rem 0;
+}
+
+@mixin mobile_elements_margin {
+  margin: 1rem 0;
+}
+
+// Padding Desktop ------
+@mixin header-space {
+  margin: 3rem 02.251rem 0;
+}
+
+@mixin elements_margin {
+  margin: 2.25rem 0;
+}
+
+@mixin active {
+  font-weight: variables.$heavy;
+  color: colours.$one-light;
+}
+
+@mixin mobile {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet-desk {
+  @media screen and (min-width: 769px) {
+    @content;
+  }
+}
