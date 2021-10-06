@@ -1,2 +1,63 @@
 @use "./partials/mixins";
 @use "./partials/variables";
+@use "./partials/colours";
+
+html {
+}
+
+body {
+  @include mixins.margin-reset;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  @include mixins.margin-reset;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: colours.$one-dark;
+  @include mixins.mobile-medium-font;
+
+  &__tabs {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    &__element {
+      display: flex;
+      width: 50%;
+      justify-content: center;
+
+      &--active {
+        @include mixins.active;
+      }
+      &--innactive {
+        @include mixins.innactive;
+      }
+    }
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("../assets/images/hero-bio.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 25vh;
+
+  &__header {
+    @include mixins.mobile-tall-font;
+    width: 95%;
+    align-self: center;
+  }
+}

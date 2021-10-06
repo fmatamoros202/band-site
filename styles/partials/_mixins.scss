@@ -1,4 +1,5 @@
 @use "./variables";
+@use "./colours";
 
 // For Mobile-----
 // Used for page and section header
@@ -84,9 +85,15 @@
   margin: 2.25rem 0;
 }
 
+//other mixins related to status
 @mixin active {
   font-weight: variables.$heavy;
   color: colours.$one-light;
+  border-bottom: 0.125rem solid colours.$one-light;
+}
+
+@mixin innactive {
+  color: colours.$two-medium;
 }
 
 @mixin mobile {
@@ -99,4 +106,14 @@
   @media screen and (min-width: 769px) {
     @content;
   }
+}
+
+@mixin tablet-desk {
+  @media screen and (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin margin-reset {
+  margin: 0;
 }

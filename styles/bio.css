@@ -1,2 +1,58 @@
+body {
+  margin: 0;
+}
 
-/*# sourceMappingURL=bio.css.map *//*# sourceMappingURL=bio.css.map */
+a {
+  text-decoration: none;
+}
+
+h1 {
+  margin: 0;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #323232;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+}
+.navigation__tabs {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.navigation__tabs__element {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+}
+.navigation__tabs__element--active {
+  font-weight: 700;
+  color: #ffffff;
+  border-bottom: 0.125rem solid #ffffff;
+}
+.navigation__tabs__element--innactive {
+  color: #e1e1e1;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("../assets/images/hero-bio.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 25vh;
+}
+.hero__header {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  width: 95%;
+  align-self: center;
+}/*# sourceMappingURL=bio.css.map */
