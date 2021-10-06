@@ -1,5 +1,6 @@
 @use "./variables";
 @use "./colours";
+@use "./fonts";
 
 // For Mobile-----
 // Used for page and section header
@@ -7,6 +8,7 @@
   font-size: variables.$size * 1.5;
   line-height: variables.$size * 2;
   font-weight: variables.$heavy;
+  font-family: "AvenirNBold";
 }
 
 // Used for subheader
@@ -14,6 +16,7 @@
   font-size: variables.$size * 0.875;
   line-height: variables.$size * 1.375;
   font-weight: variables.$medium;
+  font-family: "AvenirNMedium";
 }
 
 // Used for body and footer
@@ -21,6 +24,7 @@
   font-size: variables.$size * 0.8125;
   line-height: variables.$size * 1.375;
   font-weight: variables.$normal;
+  font-family: "AvenirN";
 }
 
 // Used for labels and buttons
@@ -28,6 +32,7 @@
   font-size: variables.$size * 0.625;
   line-height: variables.$size * 1.25;
   font-weight: variables.$heavy;
+  font-family: "AvenirNBold";
 }
 
 // Tablet and desktop-----

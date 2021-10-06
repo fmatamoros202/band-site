@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "AvenirN";
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf);
+}
+@font-face {
+  font-family: "AvenirNMedium";
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf);
+}
+@font-face {
+  font-family: "AvenirNBold";
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf);
+}
 body {
   margin: 0;
 }
@@ -10,6 +22,10 @@ h1 {
   margin: 0;
 }
 
+p {
+  margin: 0;
+}
+
 .navigation {
   display: flex;
   flex-direction: column;
@@ -18,24 +34,28 @@ h1 {
   font-size: 14px;
   line-height: 22px;
   font-weight: 600;
+  font-family: "AvenirNMedium";
 }
 .navigation__tabs {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
-.navigation__tabs__element {
+.navigation__element {
   display: flex;
   width: 50%;
   justify-content: center;
 }
-.navigation__tabs__element--active {
+.navigation__element--active {
   font-weight: 700;
   color: #ffffff;
   border-bottom: 0.125rem solid #ffffff;
 }
-.navigation__tabs__element--innactive {
+.navigation__element--innactive {
   color: #e1e1e1;
+}
+.navigation__element:hover {
+  border-bottom: 0.125rem solid #ffffff;
 }
 
 .hero {
@@ -53,6 +73,20 @@ h1 {
   font-size: 24px;
   line-height: 32px;
   font-weight: 700;
-  width: 95%;
+  font-family: "AvenirNBold";
+  width: 94%;
   align-self: center;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main__container {
+  width: 94%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }/*# sourceMappingURL=bio.css.map */
