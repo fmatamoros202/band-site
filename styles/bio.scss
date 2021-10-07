@@ -96,10 +96,11 @@ p {
 }
 
 .main {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  // width: 100%;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  @include mixins.main-container-mobile;
 
   &__container {
     @include mixins.container-mobile;
@@ -160,17 +161,72 @@ p {
     font-family: "AvenirNBold";
     color: colours.$one-dark;
   }
+}
 
-  &__photos-container {
-    // width: 10%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.photos-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    &__items {
-      width: 20rem;
-      height: 11rem;
-      @include mixins.mobile-elements-margin;
-    }
+  &__items {
+    width: 100%;
+    height: 20vh;
+    @include mixins.mobile-elements-margin;
+  }
+}
+
+// FOOTER SECTION
+
+.footer {
+  background-color: colours.$one-dark;
+  color: colours.$one-light;
+  @include mixins.main-container-mobile;
+}
+
+.footer-container {
+  @include mixins.container-mobile;
+
+  &__logo {
+    color: colours.$one-light;
+    @include mixins.mobile-elements-margin;
+    @include mixins.mobile-tall-font;
+    font-family: "AvenirN";
+  }
+  &__copyright {
+    @include mixins.mobile-elements-margin;
+    @include mixins.mobile-normal-font;
+    font-family: "AvenirN";
+  }
+}
+
+.header-social-logos {
+  display: flex;
+  flex-direction: column;
+}
+.social-header {
+  color: colours.$one-light;
+  @include mixins.mobile-elements-margin;
+  @include mixins.mobile-tall-font;
+  font-family: "AvenirNBold";
+}
+.social-logos {
+  display: flex;
+  justify-content: space-between;
+
+  &__item {
+    @include mixins.mobile-normal-font;
+    @include mixins.mobile-elements-margin;
+  }
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+
+  &__items {
+    @include mixins.mobile-elements-margin;
+    @include mixins.mobile-normal-font;
+    font-family: "AvenirN";
   }
 }
