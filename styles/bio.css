@@ -16,6 +16,8 @@ body {
 
 a {
   text-decoration: none;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -61,10 +63,9 @@ p {
 }
 .navigation__header {
   color: #ffffff;
-  margin: 0.5rem 0 1rem 0;
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: 700;
+  margin: 1.5rem 0 1rem 0;
+  width: 7.5rem;
+  height: 1.25;
 }
 
 .hero-container {
@@ -205,11 +206,9 @@ p {
 }
 .footer-container__logo {
   color: #ffffff;
-  margin: 0.5rem 0 1rem 0;
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: 700;
-  font-family: "AvenirN";
+  margin: 1.5rem 0 1rem 0;
+  width: 7.5rem;
+  height: 1.25;
 }
 .footer-container__copyright {
   margin: 0.5rem 0 1rem 0;
@@ -226,7 +225,7 @@ p {
 
 .social-header {
   color: #ffffff;
-  margin: 0.5rem 0 1rem 0;
+  margin: 1.5rem 0 1rem 0;
   font-size: 24px;
   line-height: 32px;
   font-weight: 700;

@@ -8,6 +8,8 @@ body {
 
 a {
   text-decoration: none;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -49,15 +51,13 @@ p {
     &--innactive {
       @include mixins.innactive;
     }
-  }
-  &__element:hover {
-    border-bottom: 0.25rem solid colours.$one-light;
+    &:hover {
+      border-bottom: 0.25rem solid colours.$one-light;
+    }
   }
 
   &__header {
-    color: colours.$one-light;
-    @include mixins.mobile-elements-margin;
-    @include mixins.mobile-tall-font;
+    @include mixins.logo;
   }
 }
 
@@ -96,10 +96,6 @@ p {
 }
 
 .main {
-  // width: 100%;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
   @include mixins.main-container-mobile;
 
   &__container {
@@ -188,10 +184,7 @@ p {
   @include mixins.container-mobile;
 
   &__logo {
-    color: colours.$one-light;
-    @include mixins.mobile-elements-margin;
-    @include mixins.mobile-tall-font;
-    font-family: "AvenirN";
+    @include mixins.logo;
   }
   &__copyright {
     @include mixins.mobile-elements-margin;
@@ -206,7 +199,7 @@ p {
 }
 .social-header {
   color: colours.$one-light;
-  @include mixins.mobile-elements-margin;
+  @include mixins.mobile-header-margin;
   @include mixins.mobile-tall-font;
   font-family: "AvenirNBold";
 }

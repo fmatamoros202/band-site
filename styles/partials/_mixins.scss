@@ -139,3 +139,10 @@
   flex-direction: column;
   align-items: center;
 }
+
+@mixin logo {
+  color: colours.$one-light;
+  @include mobile-header-margin;
+  width: 7.5rem;
+  height: 1.25;
+}
