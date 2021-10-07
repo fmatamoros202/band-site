@@ -2,9 +2,6 @@
 @use "./partials/variables";
 @use "./partials/colours";
 
-html {
-}
-
 body {
   @include mixins.margin-reset;
 }
@@ -26,7 +23,8 @@ p {
   flex-direction: column;
   align-items: center;
   background-color: colours.$one-dark;
-  @include mixins.mobile-medium-font;
+  // @include mixins.mobile-medium-font;
+  font-family: "AvenirN";
 
   &__tabs {
     display: flex;
@@ -42,6 +40,8 @@ p {
     display: flex;
     width: 50%;
     justify-content: center;
+    @include mixins.mobile-normal-font;
+    padding-bottom: 0.625rem;
 
     &--active {
       @include mixins.active;
@@ -51,11 +51,24 @@ p {
     }
   }
   &__element:hover {
-    border-bottom: 0.125rem solid colours.$one-light;
+    border-bottom: 0.25rem solid colours.$one-light;
+  }
+
+  &__header {
+    color: colours.$one-light;
+    @include mixins.mobile-elements-margin;
+    @include mixins.mobile-tall-font;
   }
 }
 
+.hero-container {
+  width: 100%;
+  height: 25vh;
+  background-color: colours.$one-dark-opaque;
+}
+
 .hero {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,8 +81,17 @@ p {
 
   &__header {
     @include mixins.mobile-tall-font;
-    width: 94%;
+    font-family: "AvenirNBold";
+    color: colours.$one-light;
+    width: 90%;
     align-self: center;
+    z-index: 1;
+  }
+  .hero__background {
+    position: absolute;
+    width: 100%;
+    height: 25vh;
+    background-color: colours.$one-dark-opaque;
   }
 }
 
@@ -80,9 +102,75 @@ p {
   align-items: center;
 
   &__container {
-    width: 94%;
+    @include mixins.container-mobile;
+  }
+}
+
+.about {
+  &__header {
+    @include mixins.mobile-tall-font;
+    @include mixins.mobile-header-margin;
+    font-family: "AvenirNBold";
+    color: colours.$one-dark;
+  }
+  &__image {
+    width: 100%;
+    height: 20vh;
+    @include mixins.mobile-elements-margin;
+  }
+  &__quote {
+    // Not using the mixin for line height and font size because
+    // it doesn't look like the mockup.
+    // @include mixins.mobile-medium-font;
+    font-size: variables.$size * 1;
+    line-height: variables.$size * 1.75;
+    // font-weight: variables.$medium;
+    @include mixins.mobile-elements-margin;
+    font-family: "AvenirNMedium";
+    color: colours.$one-dark;
+  }
+  &__subheader {
+    @include mixins.mobile-medium-font;
+    color: colours.$one-dark;
+    font-family: "AvenirNmedium";
+    @include mixins.mobile-header-margin;
+  }
+  &__content {
+    @include mixins.mobile-normal-font;
+    color: colours.$one-dark;
+    font-family: "AvenirN";
+    @include mixins.mobile-header-margin;
+  }
+}
+
+.galery {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: colours.$two-light;
+}
+.photos {
+  @include mixins.container-mobile;
+
+  &__header {
+    width: 100%;
+    @include mixins.mobile-tall-font;
+    @include mixins.mobile-header-margin;
+    font-family: "AvenirNBold";
+    color: colours.$one-dark;
+  }
+
+  &__photos-container {
+    // width: 10%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+
+    &__items {
+      width: 20rem;
+      height: 11rem;
+      @include mixins.mobile-elements-margin;
+    }
   }
 }

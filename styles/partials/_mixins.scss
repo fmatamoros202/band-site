@@ -8,23 +8,22 @@
   font-size: variables.$size * 1.5;
   line-height: variables.$size * 2;
   font-weight: variables.$heavy;
-  font-family: "AvenirNBold";
 }
 
 // Used for subheader
 @mixin mobile-medium-font {
-  font-size: variables.$size * 0.875;
+  // font-size: variables.$size * 0.875;
+  font-size: variables.$size * 1;
   line-height: variables.$size * 1.375;
   font-weight: variables.$medium;
-  font-family: "AvenirNMedium";
 }
 
 // Used for body and footer
 @mixin mobile-normal-font {
-  font-size: variables.$size * 0.8125;
+  // font-size: variables.$size * 0.8125;
+  font-size: variables.$size * 0.875;
   line-height: variables.$size * 1.375;
   font-weight: variables.$normal;
-  font-family: "AvenirN";
 }
 
 // Used for labels and buttons
@@ -32,7 +31,6 @@
   font-size: variables.$size * 0.625;
   line-height: variables.$size * 1.25;
   font-weight: variables.$heavy;
-  font-family: "AvenirNBold";
 }
 
 // Tablet and desktop-----
@@ -73,12 +71,12 @@
 }
 
 // Padding Mobile ------
-@mixin mobile-header-space {
+@mixin mobile-header-margin {
   margin: 1.5rem 0 1rem 0;
 }
 
-@mixin mobile_elements_margin {
-  margin: 1rem 0;
+@mixin mobile-elements-margin {
+  margin: 0.5rem 0 1rem 0;
 }
 
 // Padding Desktop ------
@@ -87,14 +85,15 @@
 }
 
 @mixin elements_margin {
-  margin: 2.25rem 0;
+  margin: 1.125rem 0 2.25rem 0;
 }
 
 //other mixins related to status
 @mixin active {
   font-weight: variables.$heavy;
   color: colours.$one-light;
-  border-bottom: 0.125rem solid colours.$one-light;
+  border-bottom: 0.25rem solid colours.$one-light;
+  font-family: "AvenirNBold";
 }
 
 @mixin innactive {
@@ -121,4 +120,13 @@
 
 @mixin margin-reset {
   margin: 0;
+}
+
+// this mixin creates the side margin for the
+// mobile view of the web
+@mixin container-mobile {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
