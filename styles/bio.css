@@ -86,21 +86,38 @@ p {
   width: 100%;
   height: 25vh;
 }
+@media screen and (min-width: 768px) {
+  .hero {
+    height: 45vh;
+  }
+}
 .hero__header {
   font-size: 24px;
   line-height: 32px;
   font-weight: 700;
-  font-family: "AvenirNBold";
+  font-family: "AvenirNMedium";
   color: #ffffff;
-  width: 90%;
+  width: 85vw;
   align-self: center;
   z-index: 1;
+}
+@media screen and (min-width: 768px) {
+  .hero__header {
+    font-size: 60px;
+    line-height: 68px;
+    font-weight: 700;
+  }
 }
 .hero .hero__background {
   position: absolute;
   width: 100%;
   height: 25vh;
   background-color: #3232327e;
+}
+@media screen and (min-width: 768px) {
+  .hero .hero__background {
+    height: 45vh;
+  }
 }
 
 .main {
@@ -110,24 +127,37 @@ p {
   align-items: center;
 }
 .main__container {
-  width: 90%;
+  width: 85vw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-
-.about__header {
+.main__header {
   font-size: 24px;
   line-height: 32px;
   font-weight: 700;
   margin: 1.5rem 0 1rem 0;
-  font-family: "AvenirNBold";
+  font-family: "AvenirNMedium";
   color: #323232;
 }
+@media screen and (min-width: 768px) {
+  .main__header {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 700;
+  }
+}
+
 .about__image {
   width: 100%;
   height: 20vh;
   margin: 0.5rem 0 1rem 0;
+}
+@media screen and (min-width: 768px) {
+  .about__image {
+    width: 75vw;
+    height: 40vh;
+  }
 }
 .about__quote {
   font-size: 16px;
@@ -135,6 +165,11 @@ p {
   margin: 0.5rem 0 1rem 0;
   font-family: "AvenirNMedium";
   color: #323232;
+}
+@media screen and (min-width: 768px) {
+  .about__quote {
+    width: 75vw;
+  }
 }
 .about__subheader {
   font-size: 16px;
@@ -144,6 +179,11 @@ p {
   font-family: "AvenirNmedium";
   margin: 1.5rem 0 1rem 0;
 }
+@media screen and (min-width: 768px) {
+  .about__subheader {
+    width: 75vw;
+  }
+}
 .about__content {
   font-size: 14px;
   line-height: 22px;
@@ -151,6 +191,18 @@ p {
   color: #323232;
   font-family: "AvenirN";
   margin: 1.5rem 0 1rem 0;
+}
+@media screen and (min-width: 768px) {
+  .about__content {
+    width: 75vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
 }
 
 .galery {
@@ -162,7 +214,7 @@ p {
 }
 
 .photos {
-  width: 90%;
+  width: 85vw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -199,7 +251,7 @@ p {
 }
 
 .footer-container {
-  width: 90%;
+  width: 85vw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -210,10 +262,10 @@ p {
   width: 7.5rem;
   height: 1.25;
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
   .footer-container__logo {
     position: absolute;
-    margin-left: 75%;
+    margin-left: 35vw;
     margin-bottom: 5%;
     margin-top: 3%;
   }
@@ -226,7 +278,7 @@ p {
   font-family: "AvenirN";
   font-size: 0.75rem;
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
   .footer-container {
     position: relative;
   }
@@ -236,10 +288,10 @@ p {
   display: flex;
   flex-direction: column;
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
   .header-social-logos {
     flex-direction: row;
-    width: 60%;
+    width: 70%;
   }
 }
 
@@ -249,37 +301,41 @@ p {
   font-size: 24px;
   line-height: 32px;
   font-weight: 700;
-  font-family: "AvenirNBold";
+  font-family: "AvenirNMedium";
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
   .social-header {
+    box-sizing: border-box;
     margin: 1.125rem 2.25rem 1.125rem 0;
-    font-size: 36px;
-    line-height: 44px;
-    font-weight: 700;
-    width: 100%;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    margin-right: 2.5rem;
   }
 }
 
 .social-logos {
+  box-sizing: border-box;
   display: flex;
-  justify-content: space-between;
-  width: 90%;
+  justify-content: flex-start;
 }
 .social-logos__item {
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
-  margin: 0.5rem 0 1rem 0;
+  margin-right: 2rem;
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
   .social-logos__item {
-    margin: 1.125rem 2.25rem 1.125rem 0;
+    box-sizing: border-box;
+    height: 35%;
+    margin-left: 12%;
   }
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
   .social-logos {
     width: 60%;
+    align-items: center;
   }
 }
 
@@ -287,7 +343,7 @@ p {
   display: flex;
   flex-direction: column;
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
   .contact-info {
     flex-direction: row;
   }
@@ -296,6 +352,7 @@ p {
 .info-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 .info-container__items {
   margin: 0.5rem 0 1rem 0;
@@ -307,7 +364,7 @@ p {
 .info-container__items--bold {
   font-family: "AvenirNMedium";
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
   .info-container__items {
     font-size: 14px;
     line-height: 22px;

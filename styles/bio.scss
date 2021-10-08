@@ -79,19 +79,31 @@ p {
   width: 100%;
   height: 25vh;
 
+  @include mixins.tablet-size {
+    height: 45vh;
+  }
+
   &__header {
     @include mixins.mobile-tall-font;
-    font-family: "AvenirNBold";
+    font-family: "AvenirNMedium";
     color: colours.$one-light;
-    width: 90%;
+    width: 85vw;
     align-self: center;
     z-index: 1;
+
+    @include mixins.tablet-size {
+      @include mixins.tallest-font;
+    }
   }
   .hero__background {
     position: absolute;
     width: 100%;
     height: 25vh;
     background-color: colours.$one-dark-opaque;
+
+    @include mixins.tablet-size {
+      height: 45vh;
+    }
   }
 }
 
@@ -101,19 +113,28 @@ p {
   &__container {
     @include mixins.container-mobile;
   }
-}
-
-.about {
   &__header {
     @include mixins.mobile-tall-font;
     @include mixins.mobile-header-margin;
-    font-family: "AvenirNBold";
+    font-family: "AvenirNMedium";
     color: colours.$one-dark;
+
+    @include mixins.tablet-size {
+      @include mixins.tall-font;
+    }
   }
+}
+
+.about {
   &__image {
     width: 100%;
     height: 20vh;
     @include mixins.mobile-elements-margin;
+
+    @include mixins.tablet-size {
+      width: 75vw;
+      height: 40vh;
+    }
   }
   &__quote {
     // Not using the mixin for line height and font size because
@@ -125,18 +146,36 @@ p {
     @include mixins.mobile-elements-margin;
     font-family: "AvenirNMedium";
     color: colours.$one-dark;
+
+    @include mixins.tablet-size {
+      width: 75vw;
+    }
   }
   &__subheader {
     @include mixins.mobile-medium-font;
     color: colours.$one-dark;
     font-family: "AvenirNmedium";
     @include mixins.mobile-header-margin;
+
+    @include mixins.tablet-size {
+      width: 75vw;
+    }
   }
   &__content {
     @include mixins.mobile-normal-font;
     color: colours.$one-dark;
     font-family: "AvenirN";
     @include mixins.mobile-header-margin;
+
+    @include mixins.tablet-size {
+      width: 75vw;
+    }
+  }
+
+  @include mixins.tablet-size {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
   }
 }
 
@@ -188,7 +227,7 @@ p {
 
     @include mixins.tablet-size {
       position: absolute;
-      margin-left: 75%;
+      margin-left: 35vw;
       margin-bottom: 5%;
       margin-top: 3%;
     }
@@ -211,36 +250,43 @@ p {
 
   @include mixins.tablet-size {
     flex-direction: row;
-    width: 60%;
+    width: 70%;
   }
 }
 .social-header {
   color: colours.$one-light;
   @include mixins.mobile-header-margin;
   @include mixins.mobile-tall-font;
-  font-family: "AvenirNBold";
+  font-family: "AvenirNMedium";
 
   @include mixins.tablet-size {
+    box-sizing: border-box;
     @include mixins.wide-elements-margin;
-    @include mixins.tall-font;
-    width: 100%;
+    @include mixins.medium-font;
+    margin-right: 2.5rem;
   }
 }
 .social-logos {
+  box-sizing: border-box;
   display: flex;
-  justify-content: space-between;
-  width: 90%;
+  justify-content: flex-start;
 
   &__item {
     @include mixins.mobile-normal-font;
-    @include mixins.mobile-elements-margin;
+    // @include mixins.mobile-elements-margin;
+    margin-right: 2rem;
+
     @include mixins.tablet-size {
-      @include mixins.wide-elements-margin;
+      box-sizing: border-box;
+      height: 35%;
+      margin-left: 12%;
+      // padding-right: 12%;
     }
   }
 
   @include mixins.tablet-size {
     width: 60%;
+    align-items: center;
   }
 }
 
@@ -255,6 +301,7 @@ p {
 .info-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
   &__items {
     @include mixins.mobile-elements-margin;
