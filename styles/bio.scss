@@ -185,31 +185,62 @@ p {
 
   &__logo {
     @include mixins.logo;
+
+    @include mixins.tablet-size {
+      position: absolute;
+      margin-left: 75%;
+      margin-bottom: 5%;
+      margin-top: 3%;
+    }
   }
+
   &__copyright {
     @include mixins.mobile-elements-margin;
     @include mixins.mobile-normal-font;
     font-family: "AvenirN";
+    font-size: 0.75rem;
+  }
+  @include mixins.tablet-size {
+    position: relative;
   }
 }
 
 .header-social-logos {
   display: flex;
   flex-direction: column;
+
+  @include mixins.tablet-size {
+    flex-direction: row;
+    width: 60%;
+  }
 }
 .social-header {
   color: colours.$one-light;
   @include mixins.mobile-header-margin;
   @include mixins.mobile-tall-font;
   font-family: "AvenirNBold";
+
+  @include mixins.tablet-size {
+    @include mixins.wide-elements-margin;
+    @include mixins.tall-font;
+    width: 100%;
+  }
 }
 .social-logos {
   display: flex;
   justify-content: space-between;
+  width: 90%;
 
   &__item {
     @include mixins.mobile-normal-font;
     @include mixins.mobile-elements-margin;
+    @include mixins.tablet-size {
+      @include mixins.wide-elements-margin;
+    }
+  }
+
+  @include mixins.tablet-size {
+    width: 60%;
   }
 }
 
@@ -217,9 +248,27 @@ p {
   display: flex;
   flex-direction: column;
 
+  @include mixins.tablet-size {
+    flex-direction: row;
+  }
+}
+.info-container {
+  display: flex;
+  flex-direction: column;
+
   &__items {
     @include mixins.mobile-elements-margin;
     @include mixins.mobile-normal-font;
     font-family: "AvenirN";
+
+    &--bold {
+      font-family: "AvenirNMedium";
+    }
+
+    @include mixins.tablet-size {
+      @include mixins.normal-font;
+      @include mixins.wide-elements-margin;
+      line-height: 1.25rem;
+    }
   }
 }

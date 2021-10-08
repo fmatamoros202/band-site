@@ -59,7 +59,7 @@
 // Used for body and footer
 @mixin normal-font {
   font-size: variables.$size * 0.875;
-  line-height: variables.$size * 1.25;
+  line-height: variables.$size * 1.375;
   font-weight: variables.$normal;
 }
 
@@ -80,12 +80,12 @@
 }
 
 // Padding Desktop ------
-@mixin header-space {
-  margin: 3rem 02.251rem 0;
+@mixin wide-header-margin {
+  margin: 3rem 2.25rem 2.25rem 0;
 }
 
-@mixin elements_margin {
-  margin: 1.125rem 0 2.25rem 0;
+@mixin wide-elements-margin {
+  margin: 1.125rem 2.25rem 1.125rem 0;
 }
 
 //other mixins related to status
@@ -100,19 +100,20 @@
   color: colours.$two-medium;
 }
 
-@mixin mobile {
+@mixin mobile-size {
   @media screen and (min-width: 768px) {
     @content;
   }
 }
 
-@mixin tablet-desk {
+// MEDIA QUERRIES
+@mixin tablet-size {
   @media screen and (min-width: 769px) {
     @content;
   }
 }
 
-@mixin tablet-desk {
+@mixin desktop-size {
   @media screen and (min-width: 1280px) {
     @content;
   }
