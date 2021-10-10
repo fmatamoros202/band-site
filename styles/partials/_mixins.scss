@@ -85,7 +85,7 @@
 }
 
 @mixin wide-elements-margin {
-  margin: 1.125rem 2.25rem 1.125rem 0;
+  margin: 1.5rem 3rem 1.5rem 0;
 }
 
 //other mixins related to status
@@ -133,6 +133,13 @@
 // mobile view of the web
 @mixin container-mobile {
   width: 85vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@mixin container-desktop {
+  width: 80vw;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

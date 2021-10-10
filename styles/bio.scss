@@ -117,6 +117,9 @@ p {
     @include mixins.tablet-size {
       padding: 0.5rem 3.5rem;
     }
+    @include mixins.desktop-size {
+      padding: 0.5rem 5rem;
+    }
   }
 
   @include mixins.tablet-size {
@@ -124,11 +127,11 @@ p {
   }
 }
 
-.hero-container {
-  width: 100%;
-  height: 25vh;
-  background-color: colours.$one-dark-opaque;
-}
+// .hero-container {
+//   width: 100%;
+//   height: 25vh;
+//   background-color: colours.$one-dark-opaque;
+// }
 
 .hero {
   position: relative;
@@ -145,6 +148,9 @@ p {
   @include mixins.tablet-size {
     height: 45vh;
   }
+  @include mixins.desktop-size {
+    height: 70vh;
+  }
 
   &__header {
     @include mixins.mobile-tall-font;
@@ -157,6 +163,9 @@ p {
     @include mixins.tablet-size {
       @include mixins.tallest-font;
     }
+    @include mixins.desktop-size {
+      width: 80vw;
+    }
   }
   .hero__background {
     position: absolute;
@@ -167,6 +176,9 @@ p {
     @include mixins.tablet-size {
       height: 45vh;
     }
+    @include mixins.desktop-size {
+      height: 70vh;
+    }
   }
 }
 
@@ -175,6 +187,10 @@ p {
 
   &__container {
     @include mixins.container-mobile;
+
+    @include mixins.desktop-size {
+      @include mixins.container-desktop;
+    }
   }
   &__header {
     @include mixins.mobile-tall-font;
@@ -184,6 +200,8 @@ p {
 
     @include mixins.tablet-size {
       @include mixins.tall-font;
+      @include mixins.wide-elements-margin;
+      margin-top: 3rem;
     }
   }
 }
@@ -197,6 +215,11 @@ p {
     @include mixins.tablet-size {
       width: 75vw;
       height: 40vh;
+    }
+
+    @include mixins.desktop-size {
+      width: 70vw;
+      height: 50vh;
     }
   }
   &__quote {
@@ -213,7 +236,19 @@ p {
     @include mixins.tablet-size {
       width: 75vw;
     }
+    @include mixins.desktop-size {
+      width: 50vw;
+    }
+    &--inlineText {
+      font-family: "AvenirN";
+
+      @include mixins.tablet-size {
+        display: inline-block;
+        @include mixins.mobile-elements-margin;
+      }
+    }
   }
+
   &__subheader {
     @include mixins.mobile-medium-font;
     color: colours.$one-dark;
@@ -223,6 +258,9 @@ p {
     @include mixins.tablet-size {
       width: 75vw;
       @include mixins.medium-font;
+    }
+    @include mixins.desktop-size {
+      width: 70vw;
     }
   }
 
@@ -237,12 +275,16 @@ p {
       @include mixins.mobile-header-margin;
       @include mixins.tablet-size {
         padding-right: 1.5rem;
+        margin-left: 1rem;
       }
     }
 
     @include mixins.tablet-size {
       flex-direction: row;
       width: 75vw;
+    }
+    @include mixins.desktop-size {
+      width: 70vw;
     }
   }
 
@@ -272,7 +314,11 @@ p {
 
     @include mixins.tablet-size {
       @include mixins.tall-font;
+      margin-top: 2rem;
     }
+  }
+  @include mixins.desktop-size {
+    @include mixins.container-desktop;
   }
 }
 
@@ -281,6 +327,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 0.75rem;
 
   &__items {
     width: 100%;
@@ -290,6 +337,11 @@ p {
     @include mixins.tablet-size {
       width: 26.5vw;
       height: 15vh;
+      margin-bottom: 1.25rem;
+    }
+    @include mixins.desktop-size {
+      width: 25.5vw;
+      height: 20vh;
     }
   }
 
@@ -320,6 +372,9 @@ p {
       margin-bottom: 5%;
       margin-top: 3%;
     }
+    @include mixins.desktop-size {
+      margin-left: 35.5vw;
+    }
   }
 
   &__copyright {
@@ -330,6 +385,10 @@ p {
   }
   @include mixins.tablet-size {
     position: relative;
+  }
+  @include mixins.desktop-size {
+    @include mixins.container-desktop;
+    margin-top: 2rem;
   }
 }
 
@@ -354,6 +413,9 @@ p {
     @include mixins.medium-font;
     margin-right: 2.5rem;
   }
+  @include mixins.desktop-size {
+    @include mixins.tall-font;
+  }
 }
 .social-logos {
   box-sizing: border-box;
@@ -369,7 +431,9 @@ p {
       box-sizing: border-box;
       height: 35%;
       margin-left: 12%;
-      // padding-right: 12%;
+    }
+    @include mixins.desktop-size {
+      margin-left: 0;
     }
   }
 
@@ -405,6 +469,10 @@ p {
       @include mixins.normal-font;
       @include mixins.wide-elements-margin;
       line-height: 1.25rem;
+    }
+    @include mixins.desktop-size {
+      margin-bottom: 1rem;
+      margin-top: 1rem;
     }
   }
 }
