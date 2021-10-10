@@ -38,11 +38,66 @@ p {
 .navigation__tabs {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: center;
+}
+.navigation__tabs--one {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.navigation__tabs--one--active {
+  border-bottom: 0.25rem solid #ffffff;
+}
+.navigation__tabs--one--innactive:hover {
+  border-bottom: 0.25rem solid #ffffff;
+}
+@media screen and (min-width: 768px) {
+  .navigation__tabs--one {
+    border-bottom: 0.25rem solid #ffffff;
+    color: #ffffff;
+    font-family: "AvenirNMedium";
+    padding: 1rem 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 2rem;
+  }
+}
+.navigation__tabs--two {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.navigation__tabs--two--active {
+  border-bottom: 0.25rem solid #ffffff;
+}
+.navigation__tabs--two--innactive:hover {
+  border-bottom: 0.25rem solid #ffffff;
+}
+@media screen and (min-width: 768px) {
+  .navigation__tabs--two {
+    color: #e1e1e1;
+    padding: 1rem 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0rem 2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .navigation__tabs {
+    box-sizing: border-box;
+    width: 30%;
+    justify-content: flex-start;
+  }
+}
+@media screen and (min-width: 768px) {
+  .navigation {
+    justify-content: flex-start;
+  }
 }
 .navigation__element {
   display: flex;
-  width: 50%;
   justify-content: center;
   font-size: 14px;
   line-height: 22px;
@@ -50,22 +105,43 @@ p {
   padding-bottom: 0.625rem;
 }
 .navigation__element--active {
-  font-weight: 700;
   color: #ffffff;
-  border-bottom: 0.25rem solid #ffffff;
-  font-family: "AvenirNBold";
+  font-family: "AvenirNMedium";
 }
 .navigation__element--innactive {
   color: #e1e1e1;
 }
-.navigation__element:hover {
-  border-bottom: 0.25rem solid #ffffff;
+@media screen and (min-width: 768px) {
+  .navigation__element {
+    color: #ffffff;
+    margin: 1.5rem 0 1rem 0;
+    width: 7.5rem;
+    height: 1.25rem;
+    padding-bottom: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .navigation__element {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
 }
 .navigation__header {
   color: #ffffff;
   margin: 1.5rem 0 1rem 0;
   width: 7.5rem;
-  height: 1.25;
+  height: 1.25rem;
+}
+@media screen and (min-width: 768px) {
+  .navigation__header {
+    padding: 0.5rem 3.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .navigation {
+    flex-direction: row;
+  }
 }
 
 .hero-container {
@@ -182,9 +258,16 @@ p {
 @media screen and (min-width: 768px) {
   .about__subheader {
     width: 75vw;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
   }
 }
-.about__content {
+.about .about-content-section {
+  display: flex;
+  flex-direction: column;
+}
+.about .about-content-section__item {
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
@@ -193,7 +276,13 @@ p {
   margin: 1.5rem 0 1rem 0;
 }
 @media screen and (min-width: 768px) {
-  .about__content {
+  .about .about-content-section__item {
+    padding-right: 1.5rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .about .about-content-section {
+    flex-direction: row;
     width: 75vw;
   }
 }
@@ -225,8 +314,15 @@ p {
   line-height: 32px;
   font-weight: 700;
   margin: 1.5rem 0 1rem 0;
-  font-family: "AvenirNBold";
+  font-family: "AvenirNMedium";
   color: #323232;
+}
+@media screen and (min-width: 768px) {
+  .photos__header {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 700;
+  }
 }
 
 .photos-container {
@@ -239,6 +335,19 @@ p {
   width: 100%;
   height: 20vh;
   margin: 0.5rem 0 1rem 0;
+}
+@media screen and (min-width: 768px) {
+  .photos-container__items {
+    width: 26.5vw;
+    height: 15vh;
+  }
+}
+@media screen and (min-width: 768px) {
+  .photos-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
 
 .footer {
@@ -260,7 +369,7 @@ p {
   color: #ffffff;
   margin: 1.5rem 0 1rem 0;
   width: 7.5rem;
-  height: 1.25;
+  height: 1.25rem;
 }
 @media screen and (min-width: 768px) {
   .footer-container__logo {

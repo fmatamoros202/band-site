@@ -89,11 +89,17 @@
 }
 
 //other mixins related to status
-@mixin active {
-  font-weight: variables.$heavy;
+@mixin active-font {
   color: colours.$one-light;
+  font-family: "AvenirNMedium";
+}
+
+@mixin innactive {
+  color: colours.$two-medium;
+}
+
+@mixin active-border {
   border-bottom: 0.25rem solid colours.$one-light;
-  font-family: "AvenirNBold";
 }
 
 @mixin innactive {
@@ -145,5 +151,5 @@
   color: colours.$one-light;
   @include mobile-header-margin;
   width: 7.5rem;
-  height: 1.25;
+  height: 1.25rem;
 }
