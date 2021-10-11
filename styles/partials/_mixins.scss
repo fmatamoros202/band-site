@@ -12,7 +12,6 @@
 
 // Used for subheader
 @mixin mobile-medium-font {
-  // font-size: variables.$size * 0.875;
   font-size: variables.$size * 1;
   line-height: variables.$size * 1.375;
   font-weight: variables.$medium;
@@ -20,7 +19,6 @@
 
 // Used for body and footer
 @mixin mobile-normal-font {
-  // font-size: variables.$size * 0.8125;
   font-size: variables.$size * 0.875;
   line-height: variables.$size * 1.375;
   font-weight: variables.$normal;
@@ -107,7 +105,7 @@
 }
 
 @mixin mobile-size {
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 766px) {
     @content;
   }
 }
@@ -159,4 +157,13 @@
   @include mobile-header-margin;
   width: 7.5rem;
   height: 1.25rem;
+}
+
+@mixin margin-fix-TD {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+@mixin mailto {
+  color: colours.$one-light;
 }

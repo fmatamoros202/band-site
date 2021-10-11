@@ -315,6 +315,7 @@ p {
 .about .about-content-section {
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem;
 }
 .about .about-content-section__item {
   font-size: 14px;
@@ -400,12 +401,21 @@ p {
   width: 100%;
   height: 20vh;
   margin: 0.5rem 0 1rem 0;
+  filter: grayscale(0.85);
+}
+.photos-container__items:hover {
+  filter: grayscale(0);
 }
 @media screen and (min-width: 768px) {
   .photos-container__items {
     width: 26.5vw;
     height: 15vh;
     margin-bottom: 1.25rem;
+  }
+  .photos-container__items:hover {
+    position: relative;
+    left: 0.5rem;
+    bottom: 0.5rem;
   }
 }
 @media screen and (min-width: 1279px) {
@@ -442,6 +452,7 @@ p {
   margin: 1.5rem 0 1rem 0;
   width: 7.5rem;
   height: 1.25rem;
+  margin: 0;
 }
 @media screen and (min-width: 768px) {
   .footer-container__logo {
@@ -463,10 +474,12 @@ p {
   font-weight: 400;
   font-family: "AvenirN";
   font-size: 0.75rem;
+  margin: 1rem 0;
 }
 @media screen and (min-width: 768px) {
   .footer-container {
     position: relative;
+    margin-top: 2rem;
   }
 }
 @media screen and (min-width: 1279px) {
@@ -502,10 +515,11 @@ p {
   .social-header {
     box-sizing: border-box;
     margin: 1.5rem 3rem 1.5rem 0;
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 700;
     margin-right: 2.5rem;
+    font-size: 1.5rem;
   }
 }
 @media screen and (min-width: 1279px) {
@@ -513,6 +527,7 @@ p {
     font-size: 36px;
     line-height: 44px;
     font-weight: 700;
+    width: auto;
   }
 }
 
@@ -526,17 +541,19 @@ p {
   line-height: 22px;
   font-weight: 400;
   margin-right: 2rem;
+  margin-bottom: 1rem;
 }
 @media screen and (min-width: 768px) {
   .social-logos__item {
     box-sizing: border-box;
     height: 35%;
-    margin-left: 12%;
+    margin-left: 1rem;
+    font-size: 1.75rem;
   }
 }
 @media screen and (min-width: 1279px) {
   .social-logos__item {
-    margin-left: 0;
+    margin-left: 1rem;
   }
 }
 @media screen and (min-width: 768px) {
@@ -571,6 +588,9 @@ p {
 .info-container__items--bold {
   font-family: "AvenirNMedium";
 }
+.info-container__items--low {
+  margin-bottom: 4rem;
+}
 @media screen and (min-width: 768px) {
   .info-container__items {
     font-size: 14px;
@@ -578,11 +598,18 @@ p {
     font-weight: 400;
     margin: 1.5rem 3rem 1.5rem 0;
     line-height: 1.25rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
 }
 @media screen and (min-width: 1279px) {
   .info-container__items {
     margin-bottom: 1rem;
     margin-top: 1rem;
+    margin-right: 5rem;
   }
+}
+
+.mailto {
+  color: #ffffff;
 }/*# sourceMappingURL=bio.css.map */

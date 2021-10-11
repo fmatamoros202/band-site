@@ -25,7 +25,6 @@ p {
   flex-direction: column;
   align-items: center;
   background-color: colours.$one-dark;
-  // @include mixins.mobile-medium-font;
   font-family: "AvenirN";
 
   &__tabs {
@@ -127,12 +126,6 @@ p {
   }
 }
 
-// .hero-container {
-//   width: 100%;
-//   height: 25vh;
-//   background-color: colours.$one-dark-opaque;
-// }
-
 .hero {
   position: relative;
   display: flex;
@@ -223,12 +216,8 @@ p {
     }
   }
   &__quote {
-    // Not using the mixin for line height and font size because
-    // it doesn't look like the mockup.
-    // @include mixins.mobile-medium-font;
     font-size: variables.$size * 1;
     line-height: variables.$size * 1.75;
-    // font-weight: variables.$medium;
     @include mixins.mobile-elements-margin;
     font-family: "AvenirNMedium";
     color: colours.$one-dark;
@@ -267,6 +256,7 @@ p {
   .about-content-section {
     display: flex;
     flex-direction: column;
+    margin-bottom: 2rem;
 
     &__item {
       @include mixins.mobile-normal-font;
@@ -333,11 +323,21 @@ p {
     width: 100%;
     height: 20vh;
     @include mixins.mobile-elements-margin;
+    filter: grayscale(0.85);
+
+    &:hover {
+      filter: grayscale(0);
+    }
 
     @include mixins.tablet-size {
       width: 26.5vw;
       height: 15vh;
       margin-bottom: 1.25rem;
+      &:hover {
+        position: relative;
+        left: 0.5rem;
+        bottom: 0.5rem;
+      }
     }
     @include mixins.desktop-size {
       width: 25.5vw;
@@ -365,6 +365,7 @@ p {
 
   &__logo {
     @include mixins.logo;
+    margin: 0;
 
     @include mixins.tablet-size {
       position: absolute;
@@ -382,9 +383,11 @@ p {
     @include mixins.mobile-normal-font;
     font-family: "AvenirN";
     font-size: 0.75rem;
+    margin: 1rem 0;
   }
   @include mixins.tablet-size {
     position: relative;
+    margin-top: 2rem;
   }
   @include mixins.desktop-size {
     @include mixins.container-desktop;
@@ -410,11 +413,13 @@ p {
   @include mixins.tablet-size {
     box-sizing: border-box;
     @include mixins.wide-elements-margin;
-    @include mixins.medium-font;
+    @include mixins.tall-font;
     margin-right: 2.5rem;
+    font-size: 1.5rem;
   }
   @include mixins.desktop-size {
     @include mixins.tall-font;
+    width: auto;
   }
 }
 .social-logos {
@@ -424,16 +429,17 @@ p {
 
   &__item {
     @include mixins.mobile-normal-font;
-    // @include mixins.mobile-elements-margin;
     margin-right: 2rem;
+    margin-bottom: 1rem;
 
     @include mixins.tablet-size {
       box-sizing: border-box;
       height: 35%;
-      margin-left: 12%;
+      margin-left: 1rem;
+      font-size: 1.75rem;
     }
     @include mixins.desktop-size {
-      margin-left: 0;
+      margin-left: 1rem;
     }
   }
 
@@ -465,14 +471,23 @@ p {
       font-family: "AvenirNMedium";
     }
 
+    &--low {
+      margin-bottom: 4rem;
+    }
+
     @include mixins.tablet-size {
       @include mixins.normal-font;
       @include mixins.wide-elements-margin;
       line-height: 1.25rem;
+      @include mixins.margin-fix-TD;
     }
     @include mixins.desktop-size {
-      margin-bottom: 1rem;
-      margin-top: 1rem;
+      @include mixins.margin-fix-TD;
+      margin-right: 5rem;
     }
   }
+}
+
+.mailto {
+  @include mixins.mailto;
 }
