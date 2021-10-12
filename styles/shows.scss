@@ -1,0 +1,53 @@
+@use "./partials/mixins";
+@use "./partials/variables";
+@use "./partials/colours";
+@use "./partials/global";
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url("../assets/images/hero-shows.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 25vh;
+
+  @include mixins.tablet-size {
+    height: 45vh;
+  }
+  @include mixins.desktop-size {
+    height: 70vh;
+  }
+
+  &__header {
+    @include mixins.mobile-tall-font;
+    font-family: "AvenirNMedium";
+    color: colours.$one-light;
+    width: 85vw;
+    align-self: center;
+    z-index: 1;
+
+    @include mixins.tablet-size {
+      @include mixins.tallest-font;
+    }
+    @include mixins.desktop-size {
+      width: 80vw;
+    }
+  }
+  .hero__background {
+    position: absolute;
+    width: 100%;
+    height: 25vh;
+    background-color: colours.$one-dark-opaque;
+
+    @include mixins.tablet-size {
+      height: 45vh;
+    }
+    @include mixins.desktop-size {
+      height: 70vh;
+    }
+  }
+}
