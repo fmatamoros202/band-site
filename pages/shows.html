@@ -9,21 +9,24 @@
     <link rel="stylesheet" type="text/css" href="../styles/fonts.css">
 </head>
 <body>
-    <nav class="navigation">
-        <a href="./index.html"><img class="navigation__header" src='../assets/logos/Logo-bandsite.svg' alt="Band's Logo"></a>
-        <section class="navigation__tabs">
-            <div class="navigation__tabs--one navigation__tabs--one--active">
-                <a class="navigation__element navigation__element--active" href="../index.html">Biography</a>
-            </div>
-            <div class="navigation__tabs--two navigation__tabs--one--innactive">
-                <a class="navigation__element navigation__element--innactive" href="./shows.html">Shows</a>
-            </div>
+    <header>
+        <nav class="navigation">
+            <a href="./index.html"><img class="navigation__header" src='../assets/logos/Logo-bandsite.svg' alt="Band's Logo"></a>
+            <section class="navigation__tabs">
+                <div class="navigation__tabs--one navigation__tabs--one--active">
+                    <a class="navigation__element navigation__element--active" href="../index.html">Biography</a>
+                </div>
+                <div class="navigation__tabs--two navigation__tabs--one--innactive">
+                    <a class="navigation__element navigation__element--innactive" href="./shows.html">Shows</a>
+                </div>
+            </section>
+        </nav>
+        <section class="hero">
+            <div class="hero__background"></div>
+            <h1 class="hero__header">The Bees Knees</h1>
         </section>
-    </nav>
-    <section class="hero">
-        <div class="hero__background"></div>
-        <h1 class="hero__header">The Bees Knees</h1>
-    </section>
+    </header>
+    <main></main>
     <footer class="footer">
         <section class="footer-container">
             <div class="header-social-logos">
@@ -56,4 +59,5 @@
             <div class="footer-container__copyright">Copyright The Bees Knees © 2021 All Rights Reserved</div>
         </section>
     </footer>
+    <script src="../scripts/build-shows-page.js"></script>
 </body>

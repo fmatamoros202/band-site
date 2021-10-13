@@ -51,3 +51,83 @@
     }
   }
 }
+
+// ******* Shows Section
+.shows {
+  @include mixins.main-container-mobile;
+
+  &__main {
+    @include mixins.container-mobile;
+  }
+
+  &__header {
+    @include mixins.mobile-tall-font;
+    @include mixins.mobile-header-margin;
+    font-family: "AvenirNMedium";
+    color: colours.$one-dark;
+  }
+}
+
+.container-shows {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modular-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 0.0625rem solid colours.$two-medium;
+  // border-top: 0.0625rem solid colours.$two-medium;
+  margin-bottom: 1rem;
+
+  &__dateTag {
+    @include mixins.mobile-small-font;
+    font-family: "AvenirN";
+    @include mixins.mobile-elements-margin-shows;
+  }
+  &__dateInfo {
+    @include mixins.mobile-normal-font;
+    font-family: "AvenirNMedium";
+    @include mixins.mobile-elements-margin-shows;
+  }
+  &__venueTag {
+    @include mixins.mobile-small-font;
+    font-family: "AvenirN";
+    @include mixins.mobile-elements-margin-shows;
+  }
+  &__venue {
+    @include mixins.mobile-normal-font;
+    font-family: "AvenirNMedium";
+    @include mixins.mobile-elements-margin-shows;
+  }
+  &__locationTag {
+    @include mixins.mobile-small-font;
+    font-family: "AvenirN";
+    @include mixins.mobile-elements-margin-shows;
+  }
+  &__location {
+    @include mixins.mobile-normal-font;
+    font-family: "AvenirNMedium";
+    @include mixins.mobile-elements-margin-shows;
+  }
+  &__ctaTag {
+    @include mixins.mobile-normal-font;
+    font-family: "AvenirN";
+    @include mixins.mobile-elements-margin-shows;
+  }
+  &__cta {
+    @include mixins.mobile-normal-font;
+    background-color: colours.$one-dark;
+    color: colours.$one-light;
+    font-family: "AvenirN";
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 0.25rem;
+    align-items: center;
+    @include mixins.mobile-elements-margin-shows;
+    margin-bottom: 1rem;
+  }
+}

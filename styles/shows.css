@@ -390,4 +390,103 @@ p {
   .hero .hero__background {
     height: 70vh;
   }
+}
+
+.shows {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.shows__main {
+  width: 85vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.shows__header {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  margin: 1.5rem 0 1rem 0;
+  font-family: "AvenirNMedium";
+  color: #323232;
+}
+
+.container-shows {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.modular-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 0.0625rem solid #e1e1e1;
+  margin-bottom: 1rem;
+}
+.modular-container__dateTag {
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 700;
+  font-family: "AvenirN";
+  margin: 0.25rem 0 0.25rem 0;
+}
+.modular-container__dateInfo {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  font-family: "AvenirNMedium";
+  margin: 0.25rem 0 0.25rem 0;
+}
+.modular-container__venueTag {
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 700;
+  font-family: "AvenirN";
+  margin: 0.25rem 0 0.25rem 0;
+}
+.modular-container__venue {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  font-family: "AvenirNMedium";
+  margin: 0.25rem 0 0.25rem 0;
+}
+.modular-container__locationTag {
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: 700;
+  font-family: "AvenirN";
+  margin: 0.25rem 0 0.25rem 0;
+}
+.modular-container__location {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  font-family: "AvenirNMedium";
+  margin: 0.25rem 0 0.25rem 0;
+}
+.modular-container__ctaTag {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  font-family: "AvenirN";
+  margin: 0.25rem 0 0.25rem 0;
+}
+.modular-container__cta {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  background-color: #323232;
+  color: #ffffff;
+  font-family: "AvenirN";
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.25rem;
+  align-items: center;
+  margin: 0.25rem 0 0.25rem 0;
+  margin-bottom: 1rem;
 }/*# sourceMappingURL=shows.css.map */
