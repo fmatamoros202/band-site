@@ -33,7 +33,6 @@ p {
   flex-direction: column;
   align-items: center;
   background-color: #323232;
-  font-family: "AvenirN";
 }
 .navigation__tabs {
   display: flex;
@@ -53,9 +52,6 @@ p {
 }
 @media screen and (min-width: 768px) {
   .navigation__tabs--one {
-    border-bottom: 0.25rem solid #ffffff;
-    color: #ffffff;
-    font-family: "AvenirNMedium";
     padding: 1rem 0;
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -77,6 +73,7 @@ p {
 @media screen and (min-width: 768px) {
   .navigation__tabs--two {
     color: #e1e1e1;
+    font-family: "AvenirN";
     padding: 1rem 0;
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -104,13 +101,6 @@ p {
   font-weight: 400;
   padding-bottom: 0.625rem;
 }
-.navigation__element--active {
-  color: #ffffff;
-  font-family: "AvenirNMedium";
-}
-.navigation__element--innactive {
-  color: #e1e1e1;
-}
 @media screen and (min-width: 768px) {
   .navigation__element {
     color: #ffffff;
@@ -118,14 +108,18 @@ p {
     width: 7.5rem;
     height: 1.25rem;
     padding-bottom: 0;
-  }
-}
-@media screen and (min-width: 768px) {
-  .navigation__element {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
   }
+}
+.navigation__element--active {
+  color: #ffffff;
+  font-family: "AvenirNMedium";
+}
+.navigation__element--innactive {
+  color: #e1e1e1;
+  font-family: "AvenirN";
 }
 .navigation__header {
   color: #ffffff;
