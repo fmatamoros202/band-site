@@ -172,3 +172,17 @@
 @mixin mailto {
   color: colours.$one-light;
 }
+
+@mixin button {
+  @include mobile-normal-font;
+  background-color: colours.$one-dark;
+  color: colours.$one-light;
+  font-family: "AvenirNMedium";
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.25rem;
+  align-items: center;
+  @include mobile-elements-margin-shows;
+  margin-bottom: 1rem;
+}

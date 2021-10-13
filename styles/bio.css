@@ -606,4 +606,102 @@ p {
     flex-wrap: wrap;
     justify-content: space-between;
   }
+}
+
+.container-convo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.convo-elements {
+  width: 85vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.elements-header {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  margin: 1.5rem 0 1rem 0;
+  font-family: "AvenirNMedium";
+  color: #323232;
+}
+
+.elements-form {
+  display: flex;
+  width: 100%;
+}
+.elements-form__photo {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+.elements-form__info {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.info-input {
+  width: 100%;
+  height: 25vh;
+  border: 0.5rem solid black;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.info-cta {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  background-color: #323232;
+  color: #ffffff;
+  font-family: "AvenirNMedium";
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.25rem;
+  align-items: center;
+  margin: 0.25rem 0 0.25rem 0;
+  margin-bottom: 1rem;
+}
+
+.elements-comment {
+  display: flex;
+  flex-direction: column;
+}
+.elements-comment__innerContainer {
+  display: flex;
+  width: 100%;
+}
+.elements-comment__innerContainer__photo {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+.elements-comment__innerContainer__info {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.info-comment-container {
+  display: flex;
+  width: 100%;
+}
+.info-comment-container__person {
+  display: flex;
+  width: 50%;
+}
+.info-comment-container__timeStamp {
+  display: flex;
+  width: 50%;
+}
+
+.info-comment-description {
+  display: flex;
 }/*# sourceMappingURL=bio.css.map */
