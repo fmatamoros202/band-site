@@ -34,8 +34,8 @@ convoElementForm.classList.add('elements-form');
 
 let elementFormPhoto = document.createElement('img');
 elementFormPhoto.classList.add('elements-form__photo')
-elementFormPhoto.setAttribute('src', '');
-elementFormPhoto.setAttribute('alt',"");
+elementFormPhoto.setAttribute('src', '../assets/images/Mohan-muruge.jpg');
+elementFormPhoto.setAttribute('alt',"User's Avatar");
 
 let elementFormInfo = document.createElement('div');
 elementFormInfo.classList.add('elements-form__info');

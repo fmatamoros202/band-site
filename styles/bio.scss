@@ -247,11 +247,19 @@
 .elements-form {
   display: flex;
   width: 100%;
+  justify-content: center;
+  @include mixins.divider;
+  padding: 0;
 
   &__photo {
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background-size: contain;
+    background-position: center;
+    margin-right: 1rem;
   }
 
   &__info {
@@ -264,28 +272,39 @@
 .info-input {
   width: 100%;
   height: 25vh;
+  box-sizing: border-box;
   border: 0.5rem solid black;
   display: flex;
   justify-content: flex-start;
 }
 
 .info-cta {
+  width: 100%;
   @include mixins.button;
+
+  &:hover {
+    background-color: colours.$two-dark;
+  }
 }
 
 .elements-comment {
   display: flex;
   flex-direction: column;
-  // width:100%;
 
   &__innerContainer {
     display: flex;
     width: 100%;
+    @include mixins.divider;
+    justify-content: center;
 
     &__photo {
       display: flex;
       flex-direction: column;
-      width: 20%;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 50%;
+      background-color: colours.$two-medium;
+      margin-right: 1rem;
     }
     &__info {
       display: flex;
@@ -302,13 +321,22 @@
   &__person {
     display: flex;
     width: 50%;
+    justify-self: flex-start;
+    @include mixins.mobile-normal-font;
+    font-family: "AvenirNMedium";
   }
   &__timeStamp {
     display: flex;
     width: 50%;
+    justify-content: flex-end;
+    @include mixins.mobile-normal-font;
+    font-family: "AvenirN";
+    color: colours.$two-medium;
   }
 }
 
 .info-comment-description {
   display: flex;
+  @include mixins.mobile-normal-font;
+  font-family: "AvenirN";
 }

@@ -186,3 +186,9 @@
   @include mobile-elements-margin-shows;
   margin-bottom: 1rem;
 }
+
+@mixin divider {
+  border-bottom: 0.0625rem solid colours.$two-medium;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}

@@ -451,6 +451,8 @@ p {
   width: 100%;
   border-bottom: 0.0625rem solid #e1e1e1;
   margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  padding: 0;
 }
 .modular-container__dateTag {
   font-size: 10px;

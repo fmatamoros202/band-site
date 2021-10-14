@@ -118,9 +118,8 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  border-bottom: 0.0625rem solid colours.$two-medium;
-  // border-top: 0.0625rem solid colours.$two-medium;
-  margin-bottom: 1rem;
+  @include mixins.divider;
+  padding: 0;
 
   &__dateTag {
     @include mixins.mobile-small-font;
@@ -158,17 +157,6 @@
     @include mixins.mobile-elements-margin-shows;
   }
   &__cta {
-    // @include mixins.mobile-normal-font;
-    // background-color: colours.$one-dark;
-    // color: colours.$one-light;
-    // font-family: "AvenirNMedium";
-    // height: 2.5rem;
-    // display: flex;
-    // justify-content: center;
-    // border-radius: 0.25rem;
-    // align-items: center;
-    // @include mixins.mobile-elements-margin-shows;
-    // margin-bottom: 1rem;
     @include mixins.button;
 
     &:hover {
