@@ -271,11 +271,43 @@
 
 .info-input {
   width: 100%;
-  height: 25vh;
+  // height: 25vh;
   box-sizing: border-box;
-  border: 0.5rem solid black;
+  // border: 0.5rem solid black;
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
+  margin-bottom: 1rem;
+
+  &__label-name {
+    @include mixins.mobile-normal-font;
+    font-family: "AvenirN";
+    color: colours.$one-medium;
+    margin-bottom: 0.25rem;
+  }
+  &__name {
+    height: 2rem;
+    border: 0.0625rem solid colours.$two-medium;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    background-color: colours.$two-light;
+  }
+  &__label-comment {
+    @include mixins.mobile-normal-font;
+    font-family: "AvenirN";
+    color: colours.$one-medium;
+    margin-bottom: 0.25rem;
+  }
+  &__comment {
+    height: 6rem;
+    border: 0.0625rem solid colours.$two-medium;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    background-color: colours.$two-light;
+  }
+  &__cta {
+    @include mixins.button;
+  }
 }
 
 .info-cta {
@@ -331,7 +363,7 @@
     justify-content: flex-end;
     @include mixins.mobile-normal-font;
     font-family: "AvenirN";
-    color: colours.$two-medium;
+    color: colours.$one-medium;
   }
 }
 

@@ -658,11 +658,56 @@ p {
 
 .info-input {
   width: 100%;
-  height: 25vh;
   box-sizing: border-box;
-  border: 0.5rem solid black;
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+.info-input__label-name {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  font-family: "AvenirN";
+  color: #afafaf;
+  margin-bottom: 0.25rem;
+}
+.info-input__name {
+  height: 2rem;
+  border: 0.0625rem solid #e1e1e1;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  background-color: #fafafa;
+}
+.info-input__label-comment {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  font-family: "AvenirN";
+  color: #afafaf;
+  margin-bottom: 0.25rem;
+}
+.info-input__comment {
+  height: 6rem;
+  border: 0.0625rem solid #e1e1e1;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  background-color: #fafafa;
+}
+.info-input__cta {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  background-color: #323232;
+  color: #ffffff;
+  font-family: "AvenirNMedium";
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.25rem;
+  align-items: center;
+  margin: 0.25rem 0 0.25rem 0;
+  margin-bottom: 1rem;
 }
 
 .info-cta {
@@ -733,7 +778,7 @@ p {
   line-height: 22px;
   font-weight: 400;
   font-family: "AvenirN";
-  color: #e1e1e1;
+  color: #afafaf;
 }
 
 .info-comment-description {

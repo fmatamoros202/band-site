@@ -43,16 +43,47 @@ elementFormInfo.classList.add('elements-form__info');
 let infoInput = document.createElement('form');
 infoInput.classList.add('info-input');
 
-let infoCta = document.createElement('a');
-infoCta.classList.add('info-cta');
-infoCta.innerText ="COMMENT";
+let infoInputNameLabel = document.createElement('label');
+infoInputNameLabel.setAttribute('for','name');
+infoInputNameLabel.classList.add('info-input__label-name');
+infoInputNameLabel.innerText = "NAME";
+
+let infoInputName = document.createElement('input');
+infoInputName.setAttribute('type','text');
+infoInputName.setAttribute('name','name');
+infoInputName.classList.add('info-input__name');
+
+let infoInputCommentLabel = document.createElement('label');
+infoInputCommentLabel.setAttribute('for','comment');
+infoInputCommentLabel.classList.add('info-input__label-comment');
+infoInputCommentLabel.innerText = "COMMENT";
+
+let infoInputComment = document.createElement('input');
+infoInputComment.setAttribute('type','textarea');
+infoInputComment.setAttribute('name','comment');
+infoInputComment.classList.add('info-input__comment');
+
+let infoInputCta = document.createElement('input');
+infoInputCta.setAttribute('type','submit');
+infoInputCta.setAttribute('value','COMMENT');
+infoInputCta.classList.add('info-input__cta');
+
+// let infoCta = document.createElement('a');
+// infoCta.classList.add('info-cta');
+// infoCta.innerText ="COMMENT";
 
 
 convoElementForm.appendChild(elementFormPhoto);
 convoElementForm.appendChild(elementFormInfo);
 
 elementFormInfo.appendChild(infoInput);
-elementFormInfo.appendChild(infoCta);
+// elementFormInfo.appendChild(infoCta);
+
+infoInput.appendChild(infoInputNameLabel);
+infoInput.appendChild(infoInputName);
+infoInput.appendChild(infoInputCommentLabel);
+infoInput.appendChild(infoInputComment);
+infoInput.appendChild(infoInputCta);
 
 
 // This is the section that auto populates at first and adds a comment afterwards
@@ -105,5 +136,14 @@ containerConvoElements.appendChild(convoElementForm);
 containerConvoElements.appendChild(convoElementComment);
 
 mainContainerConvo.appendChild(containerConvoElements);
+
+let formEvent = document.querySelector(".info-input");
+formEvent.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    console.log(e);
+    console.log(e.target.name.value);
+    console.log(e.target.comment.value);
+    console.log(e.timeStamp);
+})
 
 
