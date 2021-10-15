@@ -673,11 +673,15 @@ p {
   margin-bottom: 0.25rem;
 }
 .info-input__name {
-  height: 2rem;
+  height: 2.25rem;
   border: 0.0625rem solid #e1e1e1;
   border-radius: 0.25rem;
   margin-bottom: 1rem;
   background-color: #fafafa;
+  color: #323232;
+  text-indent: 0.5rem;
+  display: flex;
+  font-family: "AvenirN";
 }
 .info-input__label-comment {
   font-size: 14px;
@@ -693,6 +697,13 @@ p {
   border-radius: 0.25rem;
   margin-bottom: 1rem;
   background-color: #fafafa;
+  color: #323232;
+  text-indent: 0.5rem;
+  display: flex;
+  font-family: "AvenirN";
+}
+.info-input__comment:focus {
+  border-color: #323232;
 }
 .info-input__cta {
   font-size: 14px;
@@ -732,7 +743,7 @@ p {
 
 .elements-comment {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 .elements-comment__innerContainer {
   display: flex;

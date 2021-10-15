@@ -1,9 +1,13 @@
 let comments = [
     {
+        // avatar: url=(""),
+        // name: "Connor Walton",
+        // timeStamp: "02/17/2021",
+        // text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
         avatar: url=(""),
-        name: "Connor Walton",
-        timeStamp: "02/17/2021",
-        text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+        name:"Miles Acosta",
+        timeStamp: "12/20/2020",
+        text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
     },
     {
         avatar: url=(""),
@@ -12,10 +16,14 @@ let comments = [
         text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
     },
     {
+        // avatar: url=(""),
+        // name:"Miles Acosta",
+        // timeStamp: "12/20/2020",
+        // text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
         avatar: url=(""),
-        name:"Miles Acosta",
-        timeStamp: "12/20/2020",
-        text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+        name: "Connor Walton",
+        timeStamp: "02/17/2021",
+        text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
     }
 ]
 
@@ -51,6 +59,7 @@ infoInputNameLabel.innerText = "NAME";
 let infoInputName = document.createElement('input');
 infoInputName.setAttribute('type','text');
 infoInputName.setAttribute('name','name');
+infoInputName.setAttribute('placeholder','Enter your name');
 infoInputName.classList.add('info-input__name');
 
 let infoInputCommentLabel = document.createElement('label');
@@ -61,6 +70,7 @@ infoInputCommentLabel.innerText = "COMMENT";
 let infoInputComment = document.createElement('input');
 infoInputComment.setAttribute('type','textarea');
 infoInputComment.setAttribute('name','comment');
+infoInputComment.setAttribute('placeholder','Add a new comment');
 infoInputComment.classList.add('info-input__comment');
 
 let infoInputCta = document.createElement('input');
@@ -137,13 +147,74 @@ containerConvoElements.appendChild(convoElementComment);
 
 mainContainerConvo.appendChild(containerConvoElements);
 
+// ***************************************************************
+// This is the submit event
+
 let formEvent = document.querySelector(".info-input");
 formEvent.addEventListener('submit',(e)=>{
     e.preventDefault();
-    console.log(e);
-    console.log(e.target.name.value);
-    console.log(e.target.comment.value);
-    console.log(e.timeStamp);
-})
+    // console.log(e);
+    // console.log(e.target.name.value);
+    // console.log(e.target.comment.value);
+    // console.log(e.timeStamp);
+    let nameNewComment = e.target.name.value;
+    let commentNewComment = e.target.comment.value;
+    let timeNewComment = e.timeStamp;
+
+    console.log(timeNewComment);
+    myDate =(timeNewComment *1000);
+    console.log(myDate);
+
+    let newComment = {
+        avatar: url=(''),
+        name: nameNewComment,
+        timeStamp: timeNewComment,
+        text: commentNewComment,
+    };
+
+    let elementCommentInnerContainer = document.createElement('div');
+    elementCommentInnerContainer.classList.add('elements-comment__innerContainer');
+
+    let elementCommentPhoto = document.createElement('img');
+    elementCommentPhoto.classList.add('elements-comment__innerContainer__photo');
+    elementCommentPhoto.setAttribute('src', newComment.avatar);
+    elementCommentPhoto.setAttribute('alt','');
+
+    let elementCommentInfo = document.createElement('div');
+    elementCommentInfo.classList.add('elements-comment__innerContainer__info');
+
+    let infoCommentContainer = document.createElement('div');
+    infoCommentContainer.classList.add('info-comment-container')
+
+    let infoPerson = document.createElement('p');
+    infoPerson.classList.add('info-comment-container__person');
+    infoPerson.innerText = newComment.name;
+
+    let infoTimeStamp = document.createElement('p');
+    infoTimeStamp.classList.add('info-comment-container__timeStamp');
+    infoTimeStamp.innerText = newComment.timeStamp;
+
+    let infoCommentDescription = document.createElement('p');
+    infoCommentDescription.classList.add('info-comment-description');
+    infoCommentDescription.innerText = newComment.text;
+
+    elementCommentInnerContainer.appendChild(elementCommentPhoto);
+    elementCommentInnerContainer.appendChild(elementCommentInfo);
+
+    elementCommentInfo.appendChild(infoCommentContainer);
+    elementCommentInfo.appendChild(infoCommentDescription);
+
+    infoCommentContainer.appendChild(infoPerson);
+    infoCommentContainer.appendChild(infoTimeStamp);
+
+    convoElementComment.appendChild(elementCommentInnerContainer);
+
+});
+
+// console.log(newComment);
+
+
+
+
 
 

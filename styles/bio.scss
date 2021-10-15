@@ -286,11 +286,15 @@
     margin-bottom: 0.25rem;
   }
   &__name {
-    height: 2rem;
+    height: 2.25rem;
     border: 0.0625rem solid colours.$two-medium;
     border-radius: 0.25rem;
     margin-bottom: 1rem;
     background-color: colours.$two-light;
+    color: colours.$one-dark;
+    text-indent: 0.5rem;
+    display: flex;
+    font-family: "AvenirN";
   }
   &__label-comment {
     @include mixins.mobile-normal-font;
@@ -304,6 +308,14 @@
     border-radius: 0.25rem;
     margin-bottom: 1rem;
     background-color: colours.$two-light;
+    color: colours.$one-dark;
+    text-indent: 0.5rem;
+    display: flex;
+    font-family: "AvenirN";
+
+    &:focus {
+      border-color: colours.$one-dark;
+    }
   }
   &__cta {
     @include mixins.button;
@@ -321,7 +333,7 @@
 
 .elements-comment {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
 
   &__innerContainer {
     display: flex;
