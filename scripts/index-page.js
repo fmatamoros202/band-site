@@ -139,7 +139,7 @@ for (let i = 0; i < comments.length; i++ ){
     infoCommentContainer.appendChild(infoTimeStamp);
 
     convoElementComment.appendChild(elementCommentInnerContainer);
-}
+};
 
 containerConvoElements.appendChild(convoHeader);
 containerConvoElements.appendChild(convoElementForm);
@@ -153,17 +153,20 @@ mainContainerConvo.appendChild(containerConvoElements);
 let formEvent = document.querySelector(".info-input");
 formEvent.addEventListener('submit',(e)=>{
     e.preventDefault();
-    // console.log(e);
+    console.log(e);
     // console.log(e.target.name.value);
     // console.log(e.target.comment.value);
     // console.log(e.timeStamp);
     let nameNewComment = e.target.name.value;
     let commentNewComment = e.target.comment.value;
-    let timeNewComment = e.timeStamp;
+    let timeComment = e.timeStamp;
 
-    console.log(timeNewComment);
-    myDate =(timeNewComment *1000);
+    console.log(timeComment);
+    let myDate = (timeComment *1000);
     console.log(myDate);
+    myDate = new Date();
+    let timeNewComment = myDate.toLocaleDateString();
+    console.log(timeNewComment);
 
     let newComment = {
         avatar: url=(''),
@@ -171,6 +174,10 @@ formEvent.addEventListener('submit',(e)=>{
         timeStamp: timeNewComment,
         text: commentNewComment,
     };
+    // e.target.submit.setAttribute('disabled', "true");
+
+    comments.push(newComment);
+    console.log(comments);
 
     let elementCommentInnerContainer = document.createElement('div');
     elementCommentInnerContainer.classList.add('elements-comment__innerContainer');
