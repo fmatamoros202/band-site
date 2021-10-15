@@ -84,49 +84,54 @@ shows.appendChild(mainContainerShows);
 mainContainerShows.appendChild(mainShowsHeader);
 mainContainerShows.appendChild(containerShows);
 
-for (let i=0; i < showsArray.length; i++ ){
+
+
+function createShows (showsArray) {
     let modularContainer = document.createElement('div');
     modularContainer.classList.add('modular-container');
     containerShows.appendChild(modularContainer);
 
     let dateTag = document.createElement('p');
     dateTag.classList.add("modular-container__dateTag");
-    dateTag.innerHTML = showsArray[i].dateTag;
+    dateTag.innerHTML = showsArray.dateTag;
     modularContainer.appendChild(dateTag);
 
     let dateInfo = document.createElement('p');
     dateInfo.classList.add("modular-container__dateInfo");
-    dateInfo.innerHTML = showsArray[i].dateInfo;
+    dateInfo.innerHTML = showsArray.dateInfo;
     modularContainer.appendChild(dateInfo);
 
     let venueTag = document.createElement('p');
     venueTag.classList.add("modular-container__venueTag");
-    venueTag.innerHTML = showsArray[i].venueTag;
+    venueTag.innerHTML = showsArray.venueTag;
     modularContainer.appendChild(venueTag);
 
     let venue = document.createElement('p');
     venue.classList.add("modular-container__venue");
-    venue.innerHTML = showsArray[i].venue;
+    venue.innerHTML = showsArray.venue;
     modularContainer.appendChild(venue);
 
     let locationTag = document.createElement('p');
     locationTag.classList.add("modular-container__locationTag");
-    locationTag.innerHTML = showsArray[i].locationTag;
+    locationTag.innerHTML = showsArray.locationTag;
     modularContainer.appendChild(locationTag);
 
     let location = document.createElement('p');
     location.classList.add("modular-container__location");
-    location.innerHTML = showsArray[i].location;
+    location.innerHTML = showsArray.location;
     modularContainer.appendChild(location);
 
     let ctaTag = document.createElement('p');
     ctaTag.classList.add("modular-container__ctaTag");
-    ctaTag.innerHTML = showsArray[i].ctaTag;
+    ctaTag.innerHTML = showsArray.ctaTag;
     modularContainer.appendChild(ctaTag);
 
     let cta = document.createElement('a');
     cta.classList.add("modular-container__cta");
-    cta.innerHTML = showsArray[i].cta;
+    cta.innerHTML = showsArray.cta;
     modularContainer.appendChild(cta);
-
 }
+
+showsArray.forEach((element) =>{
+    createShows(element);
+});

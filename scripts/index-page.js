@@ -101,14 +101,13 @@ infoInput.appendChild(infoInputCta);
 let convoElementComment = document.createElement('div');
 convoElementComment.classList.add('elements-comment');
 
-for (let i = 0; i < comments.length; i++ ){
-
+function createComments (comments) {
     let elementCommentInnerContainer = document.createElement('div');
     elementCommentInnerContainer.classList.add('elements-comment__innerContainer');
 
     let elementCommentPhoto = document.createElement('img');
     elementCommentPhoto.classList.add('elements-comment__innerContainer__photo');
-    elementCommentPhoto.setAttribute('src',comments[i].avatar);
+    elementCommentPhoto.setAttribute('src', comments.avatar);
     elementCommentPhoto.setAttribute('alt','');
 
     let elementCommentInfo = document.createElement('div');
@@ -119,15 +118,15 @@ for (let i = 0; i < comments.length; i++ ){
 
     let infoPerson = document.createElement('p');
     infoPerson.classList.add('info-comment-container__person');
-    infoPerson.innerText = comments[i].name;
+    infoPerson.innerText = comments.name;
 
     let infoTimeStamp = document.createElement('p');
     infoTimeStamp.classList.add('info-comment-container__timeStamp');
-    infoTimeStamp.innerText = comments[i].timeStamp;
+    infoTimeStamp.innerText = comments.timeStamp;
 
     let infoCommentDescription = document.createElement('p');
     infoCommentDescription.classList.add('info-comment-description');
-    infoCommentDescription.innerText = comments[i].text;
+    infoCommentDescription.innerText = comments.text;
 
     elementCommentInnerContainer.appendChild(elementCommentPhoto);
     elementCommentInnerContainer.appendChild(elementCommentInfo);
@@ -139,7 +138,11 @@ for (let i = 0; i < comments.length; i++ ){
     infoCommentContainer.appendChild(infoTimeStamp);
 
     convoElementComment.appendChild(elementCommentInnerContainer);
-};
+}
+
+comments.forEach((element) =>{
+    createComments(element);
+});
 
 containerConvoElements.appendChild(convoHeader);
 containerConvoElements.appendChild(convoElementForm);
@@ -179,46 +182,10 @@ formEvent.addEventListener('submit',(e)=>{
     comments.push(newComment);
     console.log(comments);
 
-    let elementCommentInnerContainer = document.createElement('div');
-    elementCommentInnerContainer.classList.add('elements-comment__innerContainer');
-
-    let elementCommentPhoto = document.createElement('img');
-    elementCommentPhoto.classList.add('elements-comment__innerContainer__photo');
-    elementCommentPhoto.setAttribute('src', newComment.avatar);
-    elementCommentPhoto.setAttribute('alt','');
-
-    let elementCommentInfo = document.createElement('div');
-    elementCommentInfo.classList.add('elements-comment__innerContainer__info');
-
-    let infoCommentContainer = document.createElement('div');
-    infoCommentContainer.classList.add('info-comment-container')
-
-    let infoPerson = document.createElement('p');
-    infoPerson.classList.add('info-comment-container__person');
-    infoPerson.innerText = newComment.name;
-
-    let infoTimeStamp = document.createElement('p');
-    infoTimeStamp.classList.add('info-comment-container__timeStamp');
-    infoTimeStamp.innerText = newComment.timeStamp;
-
-    let infoCommentDescription = document.createElement('p');
-    infoCommentDescription.classList.add('info-comment-description');
-    infoCommentDescription.innerText = newComment.text;
-
-    elementCommentInnerContainer.appendChild(elementCommentPhoto);
-    elementCommentInnerContainer.appendChild(elementCommentInfo);
-
-    elementCommentInfo.appendChild(infoCommentContainer);
-    elementCommentInfo.appendChild(infoCommentDescription);
-
-    infoCommentContainer.appendChild(infoPerson);
-    infoCommentContainer.appendChild(infoTimeStamp);
-
-    convoElementComment.appendChild(elementCommentInnerContainer);
+    createComments(newComment);
 
 });
 
-// console.log(newComment);
 
 
 
