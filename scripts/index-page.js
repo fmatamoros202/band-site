@@ -1,9 +1,5 @@
 let comments = [
     {
-        // avatar: url=(""),
-        // name: "Connor Walton",
-        // timeStamp: "02/17/2021",
-        // text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
         avatar: url=(""),
         name:"Miles Acosta",
         timeStamp: "12/20/2020",
@@ -16,10 +12,6 @@ let comments = [
         text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
     },
     {
-        // avatar: url=(""),
-        // name:"Miles Acosta",
-        // timeStamp: "12/20/2020",
-        // text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
         avatar: url=(""),
         name: "Connor Walton",
         timeStamp: "02/17/2021",
@@ -28,7 +20,7 @@ let comments = [
 ]
 
 let mainContainerConvo = document.querySelector('.container-convo');
-// mainContainerConvo.classList.add('container-convo');
+
 
 let containerConvoElements = document.createElement('div');
 containerConvoElements.classList.add('convo-elements');
@@ -42,7 +34,7 @@ convoElementForm.classList.add('elements-form');
 
 let elementFormPhoto = document.createElement('img');
 elementFormPhoto.classList.add('elements-form__photo')
-elementFormPhoto.setAttribute('src', '../assets/images/Mohan-muruge.jpg');
+elementFormPhoto.setAttribute('src', './assets/images/Mohan-muruge.jpg');
 elementFormPhoto.setAttribute('alt',"User's Avatar");
 
 let elementFormInfo = document.createElement('div');
@@ -78,16 +70,10 @@ infoInputCta.setAttribute('type','submit');
 infoInputCta.setAttribute('value','COMMENT');
 infoInputCta.classList.add('info-input__cta');
 
-// let infoCta = document.createElement('a');
-// infoCta.classList.add('info-cta');
-// infoCta.innerText ="COMMENT";
-
-
 convoElementForm.appendChild(elementFormPhoto);
 convoElementForm.appendChild(elementFormInfo);
 
 elementFormInfo.appendChild(infoInput);
-// elementFormInfo.appendChild(infoCta);
 
 infoInput.appendChild(infoInputNameLabel);
 infoInput.appendChild(infoInputName);
@@ -105,10 +91,8 @@ function displayComment (comments) {
     let elementCommentInnerContainer = document.createElement('div');
     elementCommentInnerContainer.classList.add('elements-comment__innerContainer');
 
-    let elementCommentPhoto = document.createElement('img');
+    let elementCommentPhoto = document.createElement('div');
     elementCommentPhoto.classList.add('elements-comment__innerContainer__photo');
-    elementCommentPhoto.setAttribute('src', comments.avatar);
-    elementCommentPhoto.setAttribute('alt','');
 
     let elementCommentInfo = document.createElement('div');
     elementCommentInfo.classList.add('elements-comment__innerContainer__info');
@@ -150,69 +134,12 @@ containerConvoElements.appendChild(convoElementComment);
 
 mainContainerConvo.appendChild(containerConvoElements);
 
-// ***************************************************************
-// This is the submit event
-
-// let formEvent = document.querySelector(".info-input");
-// formEvent.addEventListener('submit',(e)=>{
-//     e.preventDefault();
-//     console.log(e);
-
-//     if (nameNewComment || commentNewComment === ""){}
-//     // console.log(e.target.name.value);
-//     // console.log(e.target.comment.value);
-//     // console.log(e.timeStamp);
-//     let nameNewComment = e.target.name.value;
-//     let commentNewComment = e.target.comment.value;
-//     let timeComment = e.timeStamp;
-
-//     console.log(timeComment);
-//     let myDate = (timeComment *1000);
-//     console.log(myDate);
-//     myDate = new Date();
-//     let timeNewComment = myDate.toLocaleDateString();
-//     console.log(timeNewComment);
-
-//     let newComment = {
-//         avatar: url=(''),
-//         name: nameNewComment,
-//         timeStamp: timeNewComment,
-//         text: commentNewComment,
-//     };
-
-//     // This disables the button after submitting the formEvent.
-//     // I targeted the button itself.
-//     // e.target[2].disabled=true;
-
-//     comments.push(newComment);
-//     console.log(comments);
-
-//     let elementsToRemove = document.querySelectorAll(".elements-comment__innerContainer");
-//     console.log(elementsToRemove);
-
-//     // I found this way of using the for each method to remove the nodeList on Stack Overflow
-//     // I could manipulate the NodeList as I wanted to.
-//     elementsToRemove.forEach(comments => comments.remove());
-//     e.target[0].value = "";
-//     e.target[1].value = "";
-
-//     comments.forEach((element) =>{
-//         displayComment(element);
-//     });
-    
-
-// });
-
 // *************************************
 let formEvent = document.querySelector(".info-input");
 formEvent.addEventListener('submit',(e)=>{
     e.preventDefault();
     console.log(e);
 
-
-        // console.log(e.target.name.value);
-        // console.log(e.target.comment.value);
-        // console.log(e.timeStamp);
     let nameNewComment = e.target.name.value;
     let commentNewComment = e.target.comment.value;
     let timeComment = e.timeStamp;
@@ -220,13 +147,18 @@ formEvent.addEventListener('submit',(e)=>{
     if (nameNewComment === ""){
         const errorStateName =document.querySelector(".info-input__name");
         errorStateName.classList.add("info-input__name--error");
-        // e.target[0].style.border = 
+
     }   else if(commentNewComment === ""){
         const errorStateName =document.querySelector(".info-input__name");
         const errorStateComment =document.querySelector(".info-input__comment");
         errorStateComment.classList.add("info-input__comment--error");
         errorStateName.classList.remove("info-input__name--error");
     } else{
+        const errorStateName =document.querySelector(".info-input__name");
+        const errorStateComment =document.querySelector(".info-input__comment");
+        errorStateComment.classList.remove("info-input__comment--error");
+        errorStateName.classList.remove("info-input__name--error");
+
         console.log(timeComment);
         let myDate = (timeComment *1000);
         console.log(myDate);
@@ -260,11 +192,6 @@ formEvent.addEventListener('submit',(e)=>{
         comments.forEach((element) =>{
             displayComment(element);
         });
-
-        const errorStateName =document.querySelector(".info-input__name");
-        const errorStateComment =document.querySelector(".info-input__comment");
-        errorStateComment.classList.remove("info-input__comment--error");
-        errorStateName.classList.remove("info-input__name--error");
     }
     
 

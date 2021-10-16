@@ -93,22 +93,6 @@
   }
 }
 
-// .header {
-//   @include mixins.mobile-tall-font;
-//   font-family: "AvenirNMedium";
-//   color: colours.$one-light;
-//   width: 85vw;
-//   align-self: center;
-//   z-index: 1;
-
-//   @include mixins.tablet-size {
-//     @include mixins.tallest-font;
-//   }
-//   @include mixins.desktop-size {
-//     width: 80vw;
-//   }
-// }
-
 // ******* Shows Section
 .shows {
   @include mixins.main-container-mobile;
@@ -248,8 +232,6 @@
 
     @include mixins.tablet-size {
       width: 10.5rem;
-      // margin-bottom: 1rem;
-      // margin-top: 1rem;
     }
 
     &:hover {

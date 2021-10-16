@@ -74,8 +74,6 @@ let mainShowsHeader = document.createElement('h2');
 mainShowsHeader.classList.add('shows__header');
 mainShowsHeader.innerHTML = "Shows";
 
-// let mainBody= document.querySelector('body');
-// mainBody.appendChild(mainContainerShows);
 
 let containerShows = document.createElement('section');
 containerShows.classList.add('container-shows');
