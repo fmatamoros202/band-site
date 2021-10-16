@@ -104,6 +104,12 @@
 
   &__main {
     @include mixins.container-mobile;
+
+    @include mixins.desktop-size {
+      width: 80vw;
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__header {
@@ -111,6 +117,12 @@
     @include mixins.mobile-header-margin;
     font-family: "AvenirNMedium";
     color: colours.$one-dark;
+
+    @include mixins.desktop-size {
+      margin-right: 1rem;
+      @include mixins.tall-font;
+      margin-top: 1rem;
+    }
   }
 }
 
@@ -118,55 +130,176 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+
+  @include mixins.desktop-size {
+    width: 60vw;
+  }
 }
 
 .modular-container {
   display: flex;
   flex-direction: column;
   width: 100%;
+  box-sizing: border-box;
   @include mixins.divider;
-  padding: 0;
+  padding: 1rem 0;
+
+  @include mixins.tablet-size {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-right: 1rem;
+    padding-left: 1rem;
+
+    &:hover {
+      background-color: colours.$two-light;
+    }
+    &:active {
+      background-color: colours.$two-medium;
+    }
+  }
+}
+.modular-subcontainer1 {
+  display: flex;
+  flex-direction: column;
 
   &__dateTag {
     @include mixins.mobile-small-font;
     font-family: "AvenirN";
     @include mixins.mobile-elements-margin-shows;
+
+    @include mixins.tablet-size {
+      display: none;
+    }
   }
   &__dateInfo {
     @include mixins.mobile-normal-font;
     font-family: "AvenirNMedium";
     @include mixins.mobile-elements-margin-shows;
   }
+}
+
+.modular-subcontainer2 {
+  display: flex;
+  flex-direction: column;
+
   &__venueTag {
     @include mixins.mobile-small-font;
     font-family: "AvenirN";
     @include mixins.mobile-elements-margin-shows;
+
+    @include mixins.tablet-size {
+      display: none;
+    }
   }
   &__venue {
     @include mixins.mobile-normal-font;
-    font-family: "AvenirNMedium";
+    font-family: "AvenirN";
     @include mixins.mobile-elements-margin-shows;
   }
+}
+
+.modular-subcontainer3 {
+  display: flex;
+  flex-direction: column;
+
   &__locationTag {
     @include mixins.mobile-small-font;
     font-family: "AvenirN";
     @include mixins.mobile-elements-margin-shows;
+
+    @include mixins.tablet-size {
+      display: none;
+    }
   }
   &__location {
-    @include mixins.mobile-normal-font;
-    font-family: "AvenirNMedium";
-    @include mixins.mobile-elements-margin-shows;
-  }
-  &__ctaTag {
     @include mixins.mobile-normal-font;
     font-family: "AvenirN";
     @include mixins.mobile-elements-margin-shows;
   }
+}
+
+.modular-subcontainer4 {
+  display: flex;
+  flex-direction: column;
+
+  &__ctaTag {
+    @include mixins.mobile-normal-font;
+    font-family: "AvenirN";
+    @include mixins.mobile-elements-margin-shows;
+
+    @include mixins.tablet-size {
+      display: none;
+    }
+  }
   &__cta {
     @include mixins.button;
+
+    @include mixins.tablet-size {
+      width: 10.5rem;
+      // margin-bottom: 1rem;
+      // margin-top: 1rem;
+    }
 
     &:hover {
       background-color: colours.$two-dark;
     }
   }
 }
+
+// **************************
+// .modular-container {
+//   display: flex;
+//   flex-direction: column;
+//   width: 100%;
+//   @include mixins.divider;
+//   padding: 0;
+
+//   @include mixins.tablet-size {
+//     flex-direction: row;
+//     justify-content: space-between;
+//   }
+
+//   &__dateTag {
+//     @include mixins.mobile-small-font;
+//     font-family: "AvenirN";
+//     @include mixins.mobile-elements-margin-shows;
+//   }
+//   &__dateInfo {
+//     @include mixins.mobile-normal-font;
+//     font-family: "AvenirNMedium";
+//     @include mixins.mobile-elements-margin-shows;
+//   }
+//   &__venueTag {
+//     @include mixins.mobile-small-font;
+//     font-family: "AvenirN";
+//     @include mixins.mobile-elements-margin-shows;
+//   }
+//   &__venue {
+//     @include mixins.mobile-normal-font;
+//     font-family: "AvenirNMedium";
+//     @include mixins.mobile-elements-margin-shows;
+//   }
+//   &__locationTag {
+//     @include mixins.mobile-small-font;
+//     font-family: "AvenirN";
+//     @include mixins.mobile-elements-margin-shows;
+//   }
+//   &__location {
+//     @include mixins.mobile-normal-font;
+//     font-family: "AvenirNMedium";
+//     @include mixins.mobile-elements-margin-shows;
+//   }
+//   &__ctaTag {
+//     @include mixins.mobile-normal-font;
+//     font-family: "AvenirN";
+//     @include mixins.mobile-elements-margin-shows;
+//   }
+//   &__cta {
+//     @include mixins.button;
+
+//     &:hover {
+//       background-color: colours.$two-dark;
+//     }
+//   }
+// }
