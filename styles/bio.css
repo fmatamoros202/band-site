@@ -720,6 +720,12 @@ p {
   display: flex;
   font-family: "AvenirN";
 }
+.info-input__name:focus-visible {
+  outline: #323232 0.0625rem solid;
+}
+.info-input__name--error {
+  outline: #d22d2d 0.0625rem solid;
+}
 .info-input__label-comment {
   font-size: 14px;
   line-height: 22px;
@@ -739,8 +745,11 @@ p {
   display: flex;
   font-family: "AvenirN";
 }
-.info-input__comment:focus {
-  border-color: #323232;
+.info-input__comment:focus-visible {
+  outline: #323232 0.0625rem solid;
+}
+.info-input__comment--error {
+  outline: #d22d2d 0.0625rem solid;
 }
 .info-input__cta {
   font-size: 14px;
@@ -817,6 +826,7 @@ p {
 @media screen and (min-width: 768px) {
   .elements-comment__innerContainer__info {
     width: 90%;
+    margin-bottom: 2rem;
   }
 }
 @media screen and (min-width: 1279px) {

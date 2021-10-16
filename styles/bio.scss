@@ -324,6 +324,13 @@
     text-indent: 0.5rem;
     display: flex;
     font-family: "AvenirN";
+
+    &:focus-visible {
+      outline: colours.$one-dark 0.0625rem solid;
+    }
+    &--error {
+      outline: colours.$error 0.0625rem solid;
+    }
   }
   &__label-comment {
     @include mixins.mobile-normal-font;
@@ -342,8 +349,11 @@
     display: flex;
     font-family: "AvenirN";
 
-    &:focus {
-      border-color: colours.$one-dark;
+    &:focus-visible {
+      outline: colours.$one-dark 0.0625rem solid;
+    }
+    &--error {
+      outline: colours.$error 0.0625rem solid;
     }
   }
   &__cta {
@@ -412,6 +422,7 @@
 
       @include mixins.tablet-size {
         width: 90%;
+        margin-bottom: 2rem;
       }
       @include mixins.desktop-size {
         width: 88%;

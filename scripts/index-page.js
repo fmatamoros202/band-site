@@ -101,7 +101,7 @@ infoInput.appendChild(infoInputCta);
 let convoElementComment = document.createElement('div');
 convoElementComment.classList.add('elements-comment');
 
-function createComments (comments) {
+function displayComment (comments) {
     let elementCommentInnerContainer = document.createElement('div');
     elementCommentInnerContainer.classList.add('elements-comment__innerContainer');
 
@@ -141,7 +141,7 @@ function createComments (comments) {
 }
 
 comments.forEach((element) =>{
-    createComments(element);
+    displayComment(element);
 });
 
 containerConvoElements.appendChild(convoHeader);
@@ -153,40 +153,122 @@ mainContainerConvo.appendChild(containerConvoElements);
 // ***************************************************************
 // This is the submit event
 
+// let formEvent = document.querySelector(".info-input");
+// formEvent.addEventListener('submit',(e)=>{
+//     e.preventDefault();
+//     console.log(e);
+
+//     if (nameNewComment || commentNewComment === ""){}
+//     // console.log(e.target.name.value);
+//     // console.log(e.target.comment.value);
+//     // console.log(e.timeStamp);
+//     let nameNewComment = e.target.name.value;
+//     let commentNewComment = e.target.comment.value;
+//     let timeComment = e.timeStamp;
+
+//     console.log(timeComment);
+//     let myDate = (timeComment *1000);
+//     console.log(myDate);
+//     myDate = new Date();
+//     let timeNewComment = myDate.toLocaleDateString();
+//     console.log(timeNewComment);
+
+//     let newComment = {
+//         avatar: url=(''),
+//         name: nameNewComment,
+//         timeStamp: timeNewComment,
+//         text: commentNewComment,
+//     };
+
+//     // This disables the button after submitting the formEvent.
+//     // I targeted the button itself.
+//     // e.target[2].disabled=true;
+
+//     comments.push(newComment);
+//     console.log(comments);
+
+//     let elementsToRemove = document.querySelectorAll(".elements-comment__innerContainer");
+//     console.log(elementsToRemove);
+
+//     // I found this way of using the for each method to remove the nodeList on Stack Overflow
+//     // I could manipulate the NodeList as I wanted to.
+//     elementsToRemove.forEach(comments => comments.remove());
+//     e.target[0].value = "";
+//     e.target[1].value = "";
+
+//     comments.forEach((element) =>{
+//         displayComment(element);
+//     });
+    
+
+// });
+
+// *************************************
 let formEvent = document.querySelector(".info-input");
 formEvent.addEventListener('submit',(e)=>{
     e.preventDefault();
     console.log(e);
-    // console.log(e.target.name.value);
-    // console.log(e.target.comment.value);
-    // console.log(e.timeStamp);
+
+
+        // console.log(e.target.name.value);
+        // console.log(e.target.comment.value);
+        // console.log(e.timeStamp);
     let nameNewComment = e.target.name.value;
     let commentNewComment = e.target.comment.value;
     let timeComment = e.timeStamp;
 
-    console.log(timeComment);
-    let myDate = (timeComment *1000);
-    console.log(myDate);
-    myDate = new Date();
-    let timeNewComment = myDate.toLocaleDateString();
-    console.log(timeNewComment);
+    if (nameNewComment === ""){
+        const errorStateName =document.querySelector(".info-input__name");
+        errorStateName.classList.add("info-input__name--error");
+        // e.target[0].style.border = 
+    }   else if(commentNewComment === ""){
+        const errorStateName =document.querySelector(".info-input__name");
+        const errorStateComment =document.querySelector(".info-input__comment");
+        errorStateComment.classList.add("info-input__comment--error");
+        errorStateName.classList.remove("info-input__name--error");
+    } else{
+        console.log(timeComment);
+        let myDate = (timeComment *1000);
+        console.log(myDate);
+        myDate = new Date();
+        let timeNewComment = myDate.toLocaleDateString();
+        console.log(timeNewComment);
 
-    let newComment = {
-        avatar: url=(''),
-        name: nameNewComment,
-        timeStamp: timeNewComment,
-        text: commentNewComment,
-    };
-    // e.target.submit.setAttribute('disabled', "true");
+        let newComment = {
+            avatar: url=(''),
+            name: nameNewComment,
+            timeStamp: timeNewComment,
+            text: commentNewComment,
+        };
 
-    comments.push(newComment);
-    console.log(comments);
+        // This disables the button after submitting the formEvent.
+        // I targeted the button itself.
+        // e.target[2].disabled=true;
 
-    createComments(newComment);
+        comments.push(newComment);
+        console.log(comments);
+
+        let elementsToRemove = document.querySelectorAll(".elements-comment__innerContainer");
+        console.log(elementsToRemove);
+
+        // I found this way of using the for each method to remove the nodeList on Stack Overflow
+        // I could manipulate the NodeList as I wanted to.
+        elementsToRemove.forEach(comments => comments.remove());
+        e.target[0].value = "";
+        e.target[1].value = "";
+
+        comments.forEach((element) =>{
+            displayComment(element);
+        });
+
+        const errorStateName =document.querySelector(".info-input__name");
+        const errorStateComment =document.querySelector(".info-input__comment");
+        errorStateComment.classList.remove("info-input__comment--error");
+        errorStateName.classList.remove("info-input__name--error");
+    }
+    
 
 });
-
-
 
 
 
