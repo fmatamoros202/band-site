@@ -242,14 +242,28 @@
   @include mixins.mobile-header-margin;
   font-family: "AvenirNMedium";
   color: colours.$one-dark;
+
+  @include mixins.desktop-size {
+    width: 80vw;
+    align-self: center;
+    @include mixins.tall-font;
+  }
 }
 
 .elements-form {
   display: flex;
   width: 100%;
-  justify-content: center;
+  justify-content: space-between;
   @include mixins.divider;
   padding: 0;
+  align-self: center;
+
+  @include mixins.tablet-size {
+    width: 75vw;
+  }
+  @include mixins.desktop-size {
+    width: 40vw;
+  }
 
   &__photo {
     display: flex;
@@ -259,13 +273,28 @@
     border-radius: 50%;
     background-size: contain;
     background-position: center;
-    margin-right: 1rem;
+    // margin-right: 1rem;
+    // margin-left: 15%;
+    margin-top: 1.7rem;
+
+    @include mixins.tablet-size {
+      width: 3rem;
+      height: 3rem;
+      margin-top: 1.4rem;
+    }
   }
 
   &__info {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 85%;
+
+    @include mixins.tablet-size {
+      width: 90%;
+    }
+    @include mixins.desktop-size {
+      width: 88%;
+    }
   }
 }
 
@@ -319,27 +348,48 @@
   }
   &__cta {
     @include mixins.button;
+    display: flex;
+    padding: 0;
+
+    &:hover {
+      background-color: colours.$two-dark;
+    }
+
+    @include mixins.tablet-size {
+      width: 10.5rem;
+      align-self: flex-end;
+    }
   }
 }
 
-.info-cta {
-  width: 100%;
-  @include mixins.button;
+// .info-cta {
+//   width: 100%;
+//   @include mixins.button;
 
-  &:hover {
-    background-color: colours.$two-dark;
-  }
-}
+//   &:hover {
+//     background-color: colours.$two-dark;
+//   }
+// }
 
 .elements-comment {
   display: flex;
   flex-direction: column-reverse;
+  align-self: center;
+  margin-bottom: 1rem;
+
+  @include mixins.tablet-size {
+    width: 75vw;
+  }
+  @include mixins.desktop-size {
+    width: 40vw;
+  }
 
   &__innerContainer {
     display: flex;
     width: 100%;
     @include mixins.divider;
-    justify-content: center;
+    justify-content: space-between;
+    margin-top: 1rem;
 
     &__photo {
       display: flex;
@@ -349,11 +399,23 @@
       border-radius: 50%;
       background-color: colours.$two-medium;
       margin-right: 1rem;
+
+      @include mixins.tablet-size {
+        width: 3rem;
+        height: 3rem;
+      }
     }
     &__info {
       display: flex;
       flex-direction: column;
-      width: 80%;
+      width: 85%;
+
+      @include mixins.tablet-size {
+        width: 90%;
+      }
+      @include mixins.desktop-size {
+        width: 88%;
+      }
     }
   }
 }
