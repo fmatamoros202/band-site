@@ -331,6 +331,8 @@ p {
   flex-direction: column;
   justify-content: center;
   background-image: url("../assets/images/hero-shows.jpg");
+  -o-object-fit: cover;
+     object-fit: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -489,7 +491,7 @@ p {
   border-bottom: 0.0625rem solid #e1e1e1;
   margin-bottom: 1rem;
   padding-bottom: 1rem;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
 }
 @media screen and (min-width: 768px) {
   .modular-container {

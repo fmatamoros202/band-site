@@ -9,6 +9,7 @@
   flex-direction: column;
   justify-content: center;
   background-image: url("../assets/images/hero-shows.jpg");
+  object-fit: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -137,7 +138,7 @@
   width: 100%;
   box-sizing: border-box;
   @include mixins.divider;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
 
   @include mixins.tablet-size {
     flex-direction: row;

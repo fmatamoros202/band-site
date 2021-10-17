@@ -138,7 +138,6 @@ mainContainerConvo.appendChild(containerConvoElements);
 let formEvent = document.querySelector(".info-input");
 formEvent.addEventListener('submit',(e)=>{
     e.preventDefault();
-    console.log(e);
 
     let nameNewComment = e.target.name.value;
     let commentNewComment = e.target.comment.value;
@@ -159,12 +158,9 @@ formEvent.addEventListener('submit',(e)=>{
         errorStateComment.classList.remove("info-input__comment--error");
         errorStateName.classList.remove("info-input__name--error");
 
-        console.log(timeComment);
         let myDate = (timeComment *1000);
-        console.log(myDate);
         myDate = new Date();
         let timeNewComment = myDate.toLocaleDateString();
-        console.log(timeNewComment);
 
         let newComment = {
             avatar: url=(''),
@@ -178,10 +174,8 @@ formEvent.addEventListener('submit',(e)=>{
         // e.target[2].disabled=true;
 
         comments.push(newComment);
-        console.log(comments);
 
         let elementsToRemove = document.querySelectorAll(".elements-comment__innerContainer");
-        console.log(elementsToRemove);
 
         // I found this way of using the for each method to remove the nodeList on Stack Overflow
         // I could manipulate the NodeList as I wanted to.

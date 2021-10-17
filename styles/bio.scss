@@ -9,6 +9,7 @@
   flex-direction: column;
   justify-content: center;
   background-image: url("../assets/images/hero-bio.jpg");
+  object-fit: contain;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -81,6 +82,7 @@
     width: 100%;
     height: 20vh;
     @include mixins.mobile-elements-margin;
+    object-fit: cover;
 
     @include mixins.tablet-size {
       width: 75vw;
@@ -199,6 +201,7 @@
   &__items {
     width: 100%;
     height: 20vh;
+    object-fit: cover;
     @include mixins.mobile-elements-margin;
     filter: grayscale(0.85);
 
@@ -274,6 +277,7 @@
     background-size: contain;
     background-position: center;
     margin-top: 1.7rem;
+    object-fit: cover;
 
     @include mixins.tablet-size {
       width: 3rem;
