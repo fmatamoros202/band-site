@@ -160,15 +160,15 @@ let formEvent = document.querySelector(".info-input");
 formEvent.addEventListener('submit',(e)=>{
     e.preventDefault();
 
-    let nameNewComment = e.target.name.value;
-    let commentNewComment = e.target.comment.value;
-    let timeComment = e.timeStamp;
+    let name = e.target.name.value;
+    let comment = e.target.comment.value;
+    let virtualtimestamp = e.timeStamp;
 
-    if (nameNewComment === ""){
+    if (name === ""){
         const errorStateName =document.querySelector(".info-input__name");
         errorStateName.classList.add("info-input__name--error");
 
-    }   else if(commentNewComment === ""){
+    }   else if(comment === ""){
         const errorStateName =document.querySelector(".info-input__name");
         const errorStateComment =document.querySelector(".info-input__comment");
         errorStateComment.classList.add("info-input__comment--error");
@@ -179,22 +179,46 @@ formEvent.addEventListener('submit',(e)=>{
         errorStateComment.classList.remove("info-input__comment--error");
         errorStateName.classList.remove("info-input__name--error");
 
-        let myDate = (timeComment *1000);
+        let myDate = (virtualtimestamp *1000);
         myDate = new Date();
-        let timeNewComment = myDate.toLocaleDateString();
+        let timestamp = myDate.toLocaleDateString();
 
         let newComment = {
             avatar: url=(''),
-            name: nameNewComment,
-            timeStamp: timeNewComment,
-            text: commentNewComment,
+            name: name,
+            timeStamp: timestamp,
+            text:comment,
         };
 
+        axios 
+        .post("https://project-1-api.herokuapp.com/comments?"+API_KEY, {
+                "name": `${name}`,
+                "comment": `${comment}`
+                },
+
+                {headers: {
+                    'Content-Type' : 'application/json'
+                  }
+        })
+        .then(result=>{
+            console.log(result);
+            let comments = result.data;
+            console.log(comments);
+
+            comments.forEach((element) =>{
+                displayComment(element);
+            });
+
+        })
+
+        .catch(error=>{
+            console.log("Data is not available");
+        });
         // This disables the button after submitting the formEvent.
         // I targeted the button itself.
         // e.target[2].disabled=true;
 
-        comments.unshift(newComment);
+        // comments.unshift(newComment);
 
         let elementsToRemove = document.querySelectorAll(".elements-comment__innerContainer");
 
@@ -204,9 +228,6 @@ formEvent.addEventListener('submit',(e)=>{
         e.target[0].value = "";
         e.target[1].value = "";
 
-        comments.forEach((element) =>{
-            displayComment(element);
-        });
     }
     
 
