@@ -1,3 +1,29 @@
+
+const API_KEY = "api_key=2e915d20-0296-46f3-9c06-431d21e71b86"
+
+// axios
+// .get("https://project-1-api.herokuapp.com/register")
+// .then(result=>{
+//     console.log(result);
+//     const API_KEY = result.data.api_key;
+//     console.log(API_KEY);    
+// })
+// .catch(error=>{
+//     console.log("The registration didn't work");
+// });
+
+axios 
+.get("https://project-1-api.herokuapp.com/showdates?"+API_KEY)
+.then(result=>{
+    console.log(result);
+})
+
+.catch(error=>{
+    console.log("Data is not available");
+});
+
+
+
 let showsArray =[
     {
         dateTag: "DATE",

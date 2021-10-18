@@ -1,23 +1,44 @@
-let comments = [
-    {
-        avatar: url=(""),
-        name:"Miles Acosta",
-        timeStamp: "12/20/2020",
-        text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-    },
-    {
-        avatar: url=(""),
-        name: "Emilie Beach",
-        timeStamp: "01/09/2021",
-        text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-    },
-    {
-        avatar: url=(""),
-        name: "Connor Walton",
-        timeStamp: "02/17/2021",
-        text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-    }
-]
+const API_KEY = "api_key=2e915d20-0296-46f3-9c06-431d21e71b86"
+
+axios 
+.get("https://project-1-api.herokuapp.com/comments?"+API_KEY)
+.then(result=>{
+    console.log(result);
+    let comments = result.data;
+    console.log(comments);
+
+    comments.forEach((element) =>{
+        displayComment(element);
+    });
+
+})
+
+.catch(error=>{
+    console.log("Data is not available");
+});
+
+
+
+// let comments = [
+//     {
+//         avatar: url=(""),
+//         name:"Miles Acosta",
+//         timeStamp: "12/20/2020",
+//         text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+//     },
+//     {
+//         avatar: url=(""),
+//         name: "Emilie Beach",
+//         timeStamp: "01/09/2021",
+//         text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+//     },
+//     {
+//         avatar: url=(""),
+//         name: "Connor Walton",
+//         timeStamp: "02/17/2021",
+//         text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+//     }
+// ]
 
 let mainContainerConvo = document.querySelector('.container-convo');
 
@@ -106,11 +127,11 @@ function displayComment (comments) {
 
     let infoTimeStamp = document.createElement('p');
     infoTimeStamp.classList.add('info-comment-container__timeStamp');
-    infoTimeStamp.innerText = comments.timeStamp;
+    infoTimeStamp.innerText = comments.timestamp;
 
     let infoCommentDescription = document.createElement('p');
     infoCommentDescription.classList.add('info-comment-description');
-    infoCommentDescription.innerText = comments.text;
+    infoCommentDescription.innerText = comments.comment;
 
     elementCommentInnerContainer.appendChild(elementCommentPhoto);
     elementCommentInnerContainer.appendChild(elementCommentInfo);
@@ -124,9 +145,9 @@ function displayComment (comments) {
     convoElementComment.appendChild(elementCommentInnerContainer);
 }
 
-comments.forEach((element) =>{
-    displayComment(element);
-});
+// comments.forEach((element) =>{
+//     displayComment(element);
+// });
 
 containerConvoElements.appendChild(convoHeader);
 containerConvoElements.appendChild(convoElementForm);
@@ -173,7 +194,7 @@ formEvent.addEventListener('submit',(e)=>{
         // I targeted the button itself.
         // e.target[2].disabled=true;
 
-        comments.push(newComment);
+        comments.unshift(newComment);
 
         let elementsToRemove = document.querySelectorAll(".elements-comment__innerContainer");
 
