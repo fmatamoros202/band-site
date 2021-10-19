@@ -240,3 +240,27 @@
     }
   }
 }
+
+.modular-container:first-of-type
+  > .modular-subcontainer1
+  > .modular-subcontainer1__dateTag {
+  @include mixins.tablet-size {
+    display: flex;
+  }
+}
+
+.modular-container:first-of-type
+  > .modular-subcontainer2
+  > .modular-subcontainer2__venueTag {
+  @include mixins.tablet-size {
+    display: flex;
+  }
+}
+
+.modular-container:first-of-type
+  > .modular-subcontainer3
+  > .modular-subcontainer3__locationTag {
+  @include mixins.tablet-size {
+    display: flex;
+  }
+}

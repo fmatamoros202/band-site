@@ -619,4 +619,22 @@ p {
 }
 .modular-subcontainer4__cta:hover {
   background-color: #000000;
+}
+
+@media screen and (min-width: 768px) {
+  .modular-container:first-of-type > .modular-subcontainer1 > .modular-subcontainer1__dateTag {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modular-container:first-of-type > .modular-subcontainer2 > .modular-subcontainer2__venueTag {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modular-container:first-of-type > .modular-subcontainer3 > .modular-subcontainer3__locationTag {
+    display: flex;
+  }
 }/*# sourceMappingURL=shows.css.map */
