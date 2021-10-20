@@ -1,28 +1,23 @@
 
 const API_KEY = "api_key=2e915d20-0296-46f3-9c06-431d21e71b86"
 
-// axios
-// .get("https://project-1-api.herokuapp.com/register")
-// .then(result=>{
-//     console.log(result);
-//     const API_KEY = result.data.api_key;
-//     console.log(API_KEY);    
-// })
-// .catch(error=>{
-//     console.log("The registration didn't work");
-// });
-
 axios 
 .get("https://project-1-api.herokuapp.com/showdates?"+API_KEY)
 .then(result=>{
     console.log(result);
+    arrayApi = result.data;
+    console.log(arrayApi);
 })
 
 .catch(error=>{
     console.log("Data is not available");
 });
 
-
+function dateConvert (datetoConvert) {
+    datetoConvert = (datetoConvert *1000);
+    date = new Date();
+    return convertedDate = date.toLocaleDateString();
+    }
 
 let showsArray =[
     {
@@ -90,6 +85,11 @@ let showsArray =[
 // This section will create the container for the show's table. 
 // It will be appended to body.
 
+const dateTagHeader  ="DATE";
+const venueTagHeader  ="VENUE";
+const locationTagHeader  ="LOCATION";
+const ctaTagHeader  ="";
+
 let shows = document.querySelector('main');
 shows.classList.add('shows');
 
@@ -120,7 +120,7 @@ function createShows (showsArray) {
 
     let dateTag = document.createElement('p');
     dateTag.classList.add("modular-subcontainer1__dateTag");
-    dateTag.innerHTML = showsArray.dateTag;
+    dateTag.innerHTML = dateTagHeader;
 
     let dateInfo = document.createElement('p');
     dateInfo.classList.add("modular-subcontainer1__dateInfo");
@@ -133,7 +133,7 @@ function createShows (showsArray) {
 
     let venueTag = document.createElement('p');
     venueTag.classList.add("modular-subcontainer2__venueTag");
-    venueTag.innerHTML = showsArray.venueTag;
+    venueTag.innerHTML = venueTagHeader;
 
     let venue = document.createElement('p');
     venue.classList.add("modular-subcontainer2__venue");
@@ -146,7 +146,7 @@ function createShows (showsArray) {
 
     let locationTag = document.createElement('p');
     locationTag.classList.add("modular-subcontainer3__locationTag");
-    locationTag.innerHTML = showsArray.locationTag;
+    locationTag.innerHTML = locationTagHeader;
     
 
     let location = document.createElement('p');
@@ -160,7 +160,7 @@ function createShows (showsArray) {
 
     let ctaTag = document.createElement('p');
     ctaTag.classList.add("modular-subcontainer4__ctaTag");
-    ctaTag.innerHTML = showsArray.ctaTag;
+    ctaTag.innerHTML = ctaTagHeader;
 
     let cta = document.createElement('a');
     cta.classList.add("modular-subcontainer4__cta");

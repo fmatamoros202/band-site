@@ -246,6 +246,9 @@
   > .modular-subcontainer1__dateTag {
   @include mixins.tablet-size {
     display: flex;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: colours.$one-medium;
   }
 }
 
@@ -254,6 +257,9 @@
   > .modular-subcontainer2__venueTag {
   @include mixins.tablet-size {
     display: flex;
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    color: colours.$one-medium;
   }
 }
 
@@ -262,5 +268,25 @@
   > .modular-subcontainer3__locationTag {
   @include mixins.tablet-size {
     display: flex;
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    color: colours.$one-medium;
   }
 }
+
+.modular-container:first-of-type
+  > .modular-subcontainer4
+  > .modular-subcontainer4__ctaTag {
+  @include mixins.tablet-size {
+    display: flex;
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    color: colours.$one-medium;
+  }
+}
+
+// .modular-container:first-of-type > .modular-subcontainer4 {
+//   @include mixins.tablet-size {
+//     align-content: flex-end;
+//   }
+// }

@@ -7,6 +7,10 @@ axios
     let comments = result.data;
     console.log(comments);
 
+    comments.map((element) =>{
+        element.timestamp = dateConvert(element.timestamp);
+    });
+
     comments.forEach((element) =>{
         displayComment(element);
     });
@@ -17,7 +21,11 @@ axios
     console.log("Data is not available");
 });
 
-
+function dateConvert (datetoConvert) {
+    datetoConvert = (datetoConvert *1000);
+    date = new Date();
+    return convertedDate = date.toLocaleDateString();
+    }
 
 // let comments = [
 //     {
@@ -179,16 +187,19 @@ formEvent.addEventListener('submit',(e)=>{
         errorStateComment.classList.remove("info-input__comment--error");
         errorStateName.classList.remove("info-input__name--error");
 
-        let myDate = (virtualtimestamp *1000);
-        myDate = new Date();
-        let timestamp = myDate.toLocaleDateString();
+        function dateConvert (datetoConvert) {
+        datetoConvert = (datetoConvert *1000);
+        date = new Date();
+        return convertedDate = date.toLocaleDateString();
+        }
+        console.log(dateConvert(virtualtimestamp));
 
-        let newComment = {
-            avatar: url=(''),
-            name: name,
-            timeStamp: timestamp,
-            text:comment,
-        };
+        // let newComment = {
+        //     avatar: url=(''),
+        //     name: name,
+        //     timeStamp: timestamp,
+        //     text:comment,
+        // };
 
         axios 
         .post("https://project-1-api.herokuapp.com/comments?"+API_KEY, {
@@ -200,15 +211,30 @@ formEvent.addEventListener('submit',(e)=>{
                     'Content-Type' : 'application/json'
                   }
         })
+        // .then(result=>{
+        //     console.log(result);
+        //     let comments = result.data;
+        //     console.log(comments);
+
+        //     comments.forEach((element) =>{
+        //         displayComment(element);
+        //     });
+
+        // })
         .then(result=>{
             console.log(result);
-            let comments = result.data;
-            console.log(comments);
-
+            let newComments = result.data;
+            console.log(newComments);
+            comments.push(newComments);
+        
+            comments.map((element) =>{
+                element.timestamp = dateConvert(element.timestamp);
+            });
+        
             comments.forEach((element) =>{
                 displayComment(element);
             });
-
+        
         })
 
         .catch(error=>{

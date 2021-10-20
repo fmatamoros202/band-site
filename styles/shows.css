@@ -624,17 +624,35 @@ p {
 @media screen and (min-width: 768px) {
   .modular-container:first-of-type > .modular-subcontainer1 > .modular-subcontainer1__dateTag {
     display: flex;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #afafaf;
   }
 }
 
 @media screen and (min-width: 768px) {
   .modular-container:first-of-type > .modular-subcontainer2 > .modular-subcontainer2__venueTag {
     display: flex;
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    color: #afafaf;
   }
 }
 
 @media screen and (min-width: 768px) {
   .modular-container:first-of-type > .modular-subcontainer3 > .modular-subcontainer3__locationTag {
     display: flex;
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    color: #afafaf;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modular-container:first-of-type > .modular-subcontainer4 > .modular-subcontainer4__ctaTag {
+    display: flex;
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    color: #afafaf;
   }
 }/*# sourceMappingURL=shows.css.map */
