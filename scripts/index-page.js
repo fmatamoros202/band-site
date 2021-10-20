@@ -25,28 +25,9 @@ function dateConvert (datetoConvert) {
     datetoConvert = (datetoConvert *1000);
     date = new Date();
     return convertedDate = date.toLocaleDateString();
-    }
+    // return convertedDate = date.toGMTString();
+}
 
-// let comments = [
-//     {
-//         avatar: url=(""),
-//         name:"Miles Acosta",
-//         timeStamp: "12/20/2020",
-//         text: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-//     },
-//     {
-//         avatar: url=(""),
-//         name: "Emilie Beach",
-//         timeStamp: "01/09/2021",
-//         text: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-//     },
-//     {
-//         avatar: url=(""),
-//         name: "Connor Walton",
-//         timeStamp: "02/17/2021",
-//         text: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-//     }
-// ]
 
 let mainContainerConvo = document.querySelector('.container-convo');
 
@@ -153,9 +134,6 @@ function displayComment (comments) {
     convoElementComment.appendChild(elementCommentInnerContainer);
 }
 
-// comments.forEach((element) =>{
-//     displayComment(element);
-// });
 
 containerConvoElements.appendChild(convoHeader);
 containerConvoElements.appendChild(convoElementForm);
@@ -187,22 +165,16 @@ formEvent.addEventListener('submit',(e)=>{
         errorStateComment.classList.remove("info-input__comment--error");
         errorStateName.classList.remove("info-input__name--error");
 
-        function dateConvert (datetoConvert) {
-        datetoConvert = (datetoConvert *1000);
-        date = new Date();
-        return convertedDate = date.toLocaleDateString();
-        }
-        console.log(dateConvert(virtualtimestamp));
+        // function dateConvert (datetoConvert) {
+        // datetoConvert = (datetoConvert *1000);
+        // date = new Date();
+        // return convertedDate = date.toLocaleDateString();
+        // }
+        // console.log(dateConvert(virtualtimestamp));
 
-        // let newComment = {
-        //     avatar: url=(''),
-        //     name: name,
-        //     timeStamp: timestamp,
-        //     text:comment,
-        // };
 
-        axios 
-        .post("https://project-1-api.herokuapp.com/comments?"+API_KEY, {
+        axios.all 
+        ([axios.post("https://project-1-api.herokuapp.com/comments?"+API_KEY, {
                 "name": `${name}`,
                 "comment": `${comment}`
                 },
@@ -210,32 +182,26 @@ formEvent.addEventListener('submit',(e)=>{
                 {headers: {
                     'Content-Type' : 'application/json'
                   }
-        })
-        // .then(result=>{
-        //     console.log(result);
-        //     let comments = result.data;
-        //     console.log(comments);
+        }),axios.get("https://project-1-api.herokuapp.com/comments?"+API_KEY)])
 
-        //     comments.forEach((element) =>{
-        //         displayComment(element);
-        //     });
+        .then(axios.spread(function (objectPostedComment, objectComments) {
+            
+            console.log(objectPostedComment);
+            let postedComment = objectPostedComment.data;
+            let comments = objectComments.data;
+            console.log(objectComments);
+            comments.unshift(postedComment);
 
-        // })
-        .then(result=>{
-            console.log(result);
-            let newComments = result.data;
-            console.log(newComments);
-            comments.push(newComments);
         
-            comments.map((element) =>{
-                element.timestamp = dateConvert(element.timestamp);
-            });
+            // comments.map((element) =>{
+            //     element.timestamp = dateConvert(element.timestamp);
+            // });
         
             comments.forEach((element) =>{
                 displayComment(element);
             });
         
-        })
+        }))
 
         .catch(error=>{
             console.log("Data is not available");
