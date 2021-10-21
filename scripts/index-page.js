@@ -23,9 +23,11 @@ axios
 
 function dateConvert (datetoConvert) {
     datetoConvert = (datetoConvert *1000);
-    date = new Date();
-    return convertedDate = date.toLocaleDateString();
-    // return convertedDate = date.toGMTString();
+    // datetoConvert = new Date(datetoConvert);
+    datetoConvert = new Date();
+    return convertedDate = datetoConvert.toLocaleDateString();
+    // return convertedDate = datetoConvert.toGMTString();
+    // return datetoConvert;
 }
 
 
@@ -190,12 +192,12 @@ formEvent.addEventListener('submit',(e)=>{
             let postedComment = objectPostedComment.data;
             let comments = objectComments.data;
             console.log(objectComments);
-            comments.unshift(postedComment);
+            comments.push(postedComment);
 
         
-            // comments.map((element) =>{
-            //     element.timestamp = dateConvert(element.timestamp);
-            // });
+            comments.map((element) =>{
+                element.timestamp = dateConvert(element.timestamp);
+            });
         
             comments.forEach((element) =>{
                 displayComment(element);
@@ -217,8 +219,9 @@ formEvent.addEventListener('submit',(e)=>{
         // I found this way of using the for each method to remove the nodeList on Stack Overflow
         // I could manipulate the NodeList as I wanted to.
         elementsToRemove.forEach(comments => comments.remove());
-        e.target[0].value = "";
-        e.target[1].value = "";
+        // e.target[0].value = "";
+        // e.target[1].value = "";
+        e.target.reset();
 
     }
     

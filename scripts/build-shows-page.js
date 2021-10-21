@@ -7,6 +7,10 @@ axios
     console.log(result);
     arrayApi = result.data;
     console.log(arrayApi);
+
+    arrayApi.forEach((element) =>{
+        createShows(element);
+    });
 })
 
 .catch(error=>{
@@ -17,70 +21,7 @@ function dateConvert (datetoConvert) {
     datetoConvert = (datetoConvert *1000);
     date = new Date();
     return convertedDate = date.toLocaleDateString();
-    }
-
-let showsArray =[
-    {
-        dateTag: "DATE",
-        dateInfo: "Mon Sept 06 2021",
-        venueTag: "VENUE",
-        venue: "Ronald Lane",
-        locationTag: "LOCATION",
-        location: "San Francisco, CA",
-        ctaTag:"",
-        cta: "BUY TICKETS"
-    },
-    {
-        dateTag: "DATE",
-        dateInfo: "Tue Sept 21 2021",
-        venueTag: "VENUE",
-        venue: "Pier 3 East",
-        locationTag: "LOCATION",
-        location: "San Francisco, CA",
-        ctaTag:"",
-        cta: "BUY TICKETS"
-    },
-    {
-        dateTag: "DATE",
-        dateInfo: "Fri Oct 15 2021",
-        venueTag: "VENUE",
-        venue: "View Lounge",
-        locationTag: "LOCATION",
-        location: "San Francisco, CA",
-        ctaTag:"",
-        cta: "BUY TICKETS"
-    },
-    {
-        dateTag: "DATE",
-        dateInfo: "Sat Nov 06 2021",
-        venueTag: "VENUE",
-        venue: "Hyatt Agency",
-        locationTag: "LOCATION",
-        location: "San Francisco, CA",
-        ctaTag:"",
-        cta: "BUY TICKETS"
-    },
-    {
-        dateTag: "DATE",
-        dateInfo: "Fri Nov 26 2021",
-        venueTag: "VENUE",
-        venue: "Moscow Center",
-        locationTag: "LOCATION",
-        location: "San Francisco, CA",
-        ctaTag:"",
-        cta: "BUY TICKETS"
-    },
-    {
-        dateTag: "DATE",
-        dateInfo: "Wed Dec 15 2021",
-        venueTag: "VENUE",
-        venue: "Press Club",
-        locationTag: "LOCATION",
-        location: "San Francisco, CA",
-        ctaTag:"",
-        cta: "BUY TICKETS"
-    }
-]
+}
 
 // This section will create the container for the show's table. 
 // It will be appended to body.
@@ -110,7 +51,7 @@ mainContainerShows.appendChild(containerShows);
 
 
 
-function createShows (showsArray) {
+function createShows (element) {
     let modularContainer = document.createElement('div');
     modularContainer.classList.add('modular-container');
     containerShows.appendChild(modularContainer);
@@ -124,7 +65,8 @@ function createShows (showsArray) {
 
     let dateInfo = document.createElement('p');
     dateInfo.classList.add("modular-subcontainer1__dateInfo");
-    dateInfo.innerHTML = showsArray.dateInfo;
+    // dateInfo.innerHTML = showsArray.dateInfo;
+    dateInfo.innerHTML = element.date;
     modularSubContainer1.appendChild(dateTag);
     modularSubContainer1.appendChild(dateInfo);
 
@@ -137,7 +79,8 @@ function createShows (showsArray) {
 
     let venue = document.createElement('p');
     venue.classList.add("modular-subcontainer2__venue");
-    venue.innerHTML = showsArray.venue;
+    // venue.innerHTML = showsArray.venue;
+    venue.innerHTML = element.place;
     modularSubContainer2.appendChild(venueTag);
     modularSubContainer2.appendChild(venue);
 
@@ -151,7 +94,8 @@ function createShows (showsArray) {
 
     let location = document.createElement('p');
     location.classList.add("modular-subcontainer3__location");
-    location.innerHTML = showsArray.location;
+    // location.innerHTML = showsArray.location;
+    location.innerHTML = element.location;
     modularSubContainer3.appendChild(locationTag);
     modularSubContainer3.appendChild(location);
 
@@ -164,7 +108,7 @@ function createShows (showsArray) {
 
     let cta = document.createElement('a');
     cta.classList.add("modular-subcontainer4__cta");
-    cta.innerHTML = showsArray.cta;
+    cta.innerHTML = "BUY TICKETS";
     modularSubContainer4.appendChild(ctaTag);
     modularSubContainer4.appendChild(cta);
 
@@ -173,7 +117,3 @@ function createShows (showsArray) {
     modularContainer.appendChild(modularSubContainer3);
     modularContainer.appendChild(modularSubContainer4);
 }
-
-showsArray.forEach((element) =>{
-    createShows(element);
-});
