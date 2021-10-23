@@ -1,12 +1,24 @@
 
 const API_KEY = "api_key=2e915d20-0296-46f3-9c06-431d21e71b86"
 
+function dateConvert (datetoConvert) {
+    const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+    let parsedDate = parseInt(datetoConvert,10);
+    // return dateConverted = new Date(parsedDate).getMonth()+ 1 + "/" + new Date(parsedDate).getDate() + "/" + new Date (parsedDate).getFullYear();
+    return dateConverted = new Date(parsedDate).toLocaleDateString("en-US",options);
+}
+
 axios 
 .get("https://project-1-api.herokuapp.com/showdates?"+API_KEY)
 .then(result=>{
     console.log(result);
     arrayApi = result.data;
     console.log(arrayApi);
+
+    arrayApi.map((element) => {
+        element.date = dateConvert(element.date);
+        console.log(element.date);
+    });
 
     arrayApi.forEach((element) =>{
         createShows(element);
@@ -17,11 +29,6 @@ axios
     console.log("Data is not available");
 });
 
-function dateConvert (datetoConvert) {
-    datetoConvert = (datetoConvert *1000);
-    date = new Date();
-    return convertedDate = date.toLocaleDateString();
-}
 
 // This section will create the container for the show's table. 
 // It will be appended to body.
@@ -55,7 +62,7 @@ function createShows (element) {
     let modularContainer = document.createElement('div');
     modularContainer.classList.add('modular-container');
     containerShows.appendChild(modularContainer);
-
+    
     let modularSubContainer1 = document.createElement('div');
     modularSubContainer1.classList.add('modular-subcontainer1');
 
@@ -117,3 +124,13 @@ function createShows (element) {
     modularContainer.appendChild(modularSubContainer3);
     modularContainer.appendChild(modularSubContainer4);
 }
+
+// let onClickEvent = document.querySelector(".container-shows");
+// onClickEvent.addEventListener('click',(e)=>{
+//     console.log(e);
+//     targetString = e.target.classList[0]
+//     let activeContainer = document.querySelector("."+`${targetString}`);
+//     console.log(activeContainer);
+//     activeContainer.classList.add("activeClick");
+// });
+

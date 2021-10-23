@@ -7,9 +7,12 @@ axios
     let comments = result.data;
     console.log(comments);
 
+    comments.sort((a,b)=> b.timestamp - a.timestamp);
+
     comments.map((element) =>{
         element.timestamp = dateConvert(element.timestamp);
     });
+
 
     comments.forEach((element) =>{
         displayComment(element);
@@ -22,12 +25,8 @@ axios
 });
 
 function dateConvert (datetoConvert) {
-    datetoConvert = (datetoConvert *1000);
-    // datetoConvert = new Date(datetoConvert);
-    datetoConvert = new Date();
-    return convertedDate = datetoConvert.toLocaleDateString();
-    // return convertedDate = datetoConvert.toGMTString();
-    // return datetoConvert;
+    // return dateConverted = new Date(datetoConvert).getMonth()+ 1 + "/" + new Date(datetoConvert).getDate() + "/" + new Date (datetoConvert).getFullYear();
+    return dateConverted = new Date(datetoConvert).toLocaleDateString();
 }
 
 
@@ -150,7 +149,7 @@ formEvent.addEventListener('submit',(e)=>{
 
     let name = e.target.name.value;
     let comment = e.target.comment.value;
-    let virtualtimestamp = e.timeStamp;
+    // let virtualtimestamp = e.timeStamp;
 
     if (name === ""){
         const errorStateName =document.querySelector(".info-input__name");
@@ -166,13 +165,6 @@ formEvent.addEventListener('submit',(e)=>{
         const errorStateComment =document.querySelector(".info-input__comment");
         errorStateComment.classList.remove("info-input__comment--error");
         errorStateName.classList.remove("info-input__name--error");
-
-        // function dateConvert (datetoConvert) {
-        // datetoConvert = (datetoConvert *1000);
-        // date = new Date();
-        // return convertedDate = date.toLocaleDateString();
-        // }
-        // console.log(dateConvert(virtualtimestamp));
 
 
         axios.all 
@@ -192,12 +184,14 @@ formEvent.addEventListener('submit',(e)=>{
             let postedComment = objectPostedComment.data;
             let comments = objectComments.data;
             console.log(objectComments);
-            comments.push(postedComment);
+            comments.unshift(postedComment);
 
         
             comments.map((element) =>{
                 element.timestamp = dateConvert(element.timestamp);
             });
+
+            console.log(comments);
         
             comments.forEach((element) =>{
                 displayComment(element);
@@ -212,12 +206,10 @@ formEvent.addEventListener('submit',(e)=>{
         // I targeted the button itself.
         // e.target[2].disabled=true;
 
-        // comments.unshift(newComment);
-
         let elementsToRemove = document.querySelectorAll(".elements-comment__innerContainer");
 
         // I found this way of using the for each method to remove the nodeList on Stack Overflow
-        // I could manipulate the NodeList as I wanted to.
+        // I couldn't manipulate the NodeList as I wanted to.
         elementsToRemove.forEach(comments => comments.remove());
         // e.target[0].value = "";
         // e.target[1].value = "";

@@ -155,6 +155,11 @@
     }
   }
 }
+
+.activeClick {
+  background-color: colours.$two-medium;
+}
+
 .modular-subcontainer1 {
   display: flex;
   flex-direction: column;
