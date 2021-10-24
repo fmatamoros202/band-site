@@ -140,7 +140,6 @@
     &__item {
       @include mixins.mobile-normal-font;
       color: colours.$one-dark;
-      font-family: "AvenirN";
       @include mixins.mobile-header-margin;
       @include mixins.tablet-size {
         padding-right: 1.5rem;
@@ -310,7 +309,6 @@
 
   &__label-name {
     @include mixins.mobile-normal-font;
-    font-family: "AvenirN";
     color: colours.$one-medium;
     margin-bottom: 0.25rem;
   }
@@ -334,7 +332,6 @@
   }
   &__label-comment {
     @include mixins.mobile-normal-font;
-    font-family: "AvenirN";
     color: colours.$one-medium;
     margin-bottom: 0.25rem;
   }
@@ -439,7 +436,6 @@
     width: 50%;
     justify-content: flex-end;
     @include mixins.mobile-normal-font;
-    font-family: "AvenirN";
     color: colours.$one-medium;
   }
 }
@@ -447,5 +443,4 @@
 .info-comment-description {
   display: flex;
   @include mixins.mobile-normal-font;
-  font-family: "AvenirN";
 }

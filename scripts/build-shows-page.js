@@ -4,7 +4,6 @@ const API_KEY = "api_key=2e915d20-0296-46f3-9c06-431d21e71b86"
 function dateConvert (datetoConvert) {
     const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
     let parsedDate = parseInt(datetoConvert,10);
-    // return dateConverted = new Date(parsedDate).getMonth()+ 1 + "/" + new Date(parsedDate).getDate() + "/" + new Date (parsedDate).getFullYear();
     return dateConverted = new Date(parsedDate).toLocaleDateString("en-US",options);
 }
 
@@ -72,7 +71,6 @@ function createShows (element) {
 
     let dateInfo = document.createElement('p');
     dateInfo.classList.add("modular-subcontainer1__dateInfo");
-    // dateInfo.innerHTML = showsArray.dateInfo;
     dateInfo.innerHTML = element.date;
     modularSubContainer1.appendChild(dateTag);
     modularSubContainer1.appendChild(dateInfo);
@@ -86,7 +84,6 @@ function createShows (element) {
 
     let venue = document.createElement('p');
     venue.classList.add("modular-subcontainer2__venue");
-    // venue.innerHTML = showsArray.venue;
     venue.innerHTML = element.place;
     modularSubContainer2.appendChild(venueTag);
     modularSubContainer2.appendChild(venue);
@@ -101,7 +98,6 @@ function createShows (element) {
 
     let location = document.createElement('p');
     location.classList.add("modular-subcontainer3__location");
-    // location.innerHTML = showsArray.location;
     location.innerHTML = element.location;
     modularSubContainer3.appendChild(locationTag);
     modularSubContainer3.appendChild(location);
@@ -125,12 +121,4 @@ function createShows (element) {
     modularContainer.appendChild(modularSubContainer4);
 }
 
-// let onClickEvent = document.querySelector(".container-shows");
-// onClickEvent.addEventListener('click',(e)=>{
-//     console.log(e);
-//     targetString = e.target.classList[0]
-//     let activeContainer = document.querySelector("."+`${targetString}`);
-//     console.log(activeContainer);
-//     activeContainer.classList.add("activeClick");
-// });
 

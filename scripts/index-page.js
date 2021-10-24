@@ -25,7 +25,6 @@ axios
 });
 
 function dateConvert (datetoConvert) {
-    // return dateConverted = new Date(datetoConvert).getMonth()+ 1 + "/" + new Date(datetoConvert).getDate() + "/" + new Date (datetoConvert).getFullYear();
     return dateConverted = new Date(datetoConvert).toLocaleDateString();
 }
 
@@ -149,7 +148,6 @@ formEvent.addEventListener('submit',(e)=>{
 
     let name = e.target.name.value;
     let comment = e.target.comment.value;
-    // let virtualtimestamp = e.timeStamp;
 
     if (name === ""){
         const errorStateName =document.querySelector(".info-input__name");
@@ -183,9 +181,9 @@ formEvent.addEventListener('submit',(e)=>{
             console.log(objectPostedComment);
             let postedComment = objectPostedComment.data;
             let comments = objectComments.data;
-            console.log(objectComments);
             comments.unshift(postedComment);
 
+            comments.sort((a,b)=> b.timestamp - a.timestamp);
         
             comments.map((element) =>{
                 element.timestamp = dateConvert(element.timestamp);
@@ -202,17 +200,12 @@ formEvent.addEventListener('submit',(e)=>{
         .catch(error=>{
             console.log("Data is not available");
         });
-        // This disables the button after submitting the formEvent.
-        // I targeted the button itself.
-        // e.target[2].disabled=true;
 
         let elementsToRemove = document.querySelectorAll(".elements-comment__innerContainer");
 
         // I found this way of using the for each method to remove the nodeList on Stack Overflow
         // I couldn't manipulate the NodeList as I wanted to.
         elementsToRemove.forEach(comments => comments.remove());
-        // e.target[0].value = "";
-        // e.target[1].value = "";
         e.target.reset();
 
     }

@@ -12,6 +12,7 @@
 }
 body {
   margin: 0;
+  font-family: "AvenirN";
 }
 
 a {
@@ -183,7 +184,6 @@ p {
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
-  font-family: "AvenirN";
   font-size: 0.75rem;
   margin: 1rem 0;
 }
@@ -294,7 +294,6 @@ p {
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
-  font-family: "AvenirN";
 }
 .info-container__items--bold {
   font-family: "AvenirNMedium";
@@ -493,6 +492,9 @@ p {
   padding-bottom: 1rem;
   padding: 1.5rem 0;
 }
+.modular-container:hover {
+  background-color: #fafafa;
+}
 @media screen and (min-width: 768px) {
   .modular-container {
     flex-direction: row;
@@ -500,9 +502,6 @@ p {
     align-items: baseline;
     padding-right: 1rem;
     padding-left: 1rem;
-  }
-  .modular-container:hover {
-    background-color: #fafafa;
   }
   .modular-container:active {
     background-color: #e1e1e1;
@@ -521,7 +520,6 @@ p {
   font-size: 10px;
   line-height: 20px;
   font-weight: 700;
-  font-family: "AvenirN";
   margin: 0.25rem 0 0.25rem 0;
 }
 @media screen and (min-width: 768px) {
@@ -545,7 +543,6 @@ p {
   font-size: 10px;
   line-height: 20px;
   font-weight: 700;
-  font-family: "AvenirN";
   margin: 0.25rem 0 0.25rem 0;
 }
 @media screen and (min-width: 768px) {
@@ -557,7 +554,6 @@ p {
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
-  font-family: "AvenirN";
   margin: 0.25rem 0 0.25rem 0;
 }
 
@@ -569,7 +565,6 @@ p {
   font-size: 10px;
   line-height: 20px;
   font-weight: 700;
-  font-family: "AvenirN";
   margin: 0.25rem 0 0.25rem 0;
 }
 @media screen and (min-width: 768px) {
@@ -581,7 +576,6 @@ p {
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
-  font-family: "AvenirN";
   margin: 0.25rem 0 0.25rem 0;
 }
 
@@ -593,7 +587,6 @@ p {
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
-  font-family: "AvenirN";
   margin: 0.25rem 0 0.25rem 0;
 }
 @media screen and (min-width: 768px) {

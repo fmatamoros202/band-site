@@ -4,6 +4,7 @@
 
 body {
   @include mixins.margin-reset;
+  font-family: "AvenirN";
 }
 
 a {
@@ -25,7 +26,6 @@ p {
   flex-direction: column;
   align-items: center;
   background-color: colours.$one-dark;
-  // font-family: "AvenirN";
 
   &__tabs {
     display: flex;
@@ -39,7 +39,6 @@ p {
 
       &--active {
         @include mixins.active-border;
-        // @include mixins.active-font;
       }
 
       &--innactive {
@@ -49,8 +48,6 @@ p {
       }
 
       @include mixins.tablet-size {
-        // @include mixins.active-border;
-        // @include mixins.active-font;
         padding: 1rem 0;
         width: fit-content;
         margin: 0 2rem;
@@ -63,7 +60,6 @@ p {
 
       &--active {
         @include mixins.active-border;
-        // @include mixins.active-font;
       }
 
       &--innactive {
@@ -154,7 +150,6 @@ p {
   &__copyright {
     @include mixins.mobile-elements-margin;
     @include mixins.mobile-normal-font;
-    font-family: "AvenirN";
     font-size: 0.75rem;
     margin: 1rem 0;
   }
@@ -238,7 +233,6 @@ p {
   &__items {
     @include mixins.mobile-elements-margin;
     @include mixins.mobile-normal-font;
-    font-family: "AvenirN";
 
     &--bold {
       font-family: "AvenirNMedium";

@@ -12,6 +12,7 @@
 }
 body {
   margin: 0;
+  font-family: "AvenirN";
 }
 
 a {
@@ -183,7 +184,6 @@ p {
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
-  font-family: "AvenirN";
   font-size: 0.75rem;
   margin: 1rem 0;
 }
@@ -294,7 +294,6 @@ p {
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
-  font-family: "AvenirN";
 }
 .info-container__items--bold {
   font-family: "AvenirNMedium";
@@ -502,7 +501,6 @@ p {
   line-height: 22px;
   font-weight: 400;
   color: #323232;
-  font-family: "AvenirN";
   margin: 1.5rem 0 1rem 0;
 }
 @media screen and (min-width: 768px) {
@@ -713,7 +711,6 @@ p {
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
-  font-family: "AvenirN";
   color: #afafaf;
   margin-bottom: 0.25rem;
 }
@@ -738,7 +735,6 @@ p {
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
-  font-family: "AvenirN";
   color: #afafaf;
   margin-bottom: 0.25rem;
 }
@@ -864,7 +860,6 @@ p {
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
-  font-family: "AvenirN";
   color: #afafaf;
 }
 
@@ -873,5 +868,4 @@ p {
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
-  font-family: "AvenirN";
 }/*# sourceMappingURL=bio.css.map */
