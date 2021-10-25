@@ -442,5 +442,34 @@
 
 .info-comment-description {
   display: flex;
+  justify-content: space-between;
   @include mixins.mobile-normal-font;
+
+  &__text {
+    display: flex;
+    @include mixins.mobile-normal-font;
+    padding-right: 0.5rem;
+  }
+
+  &__containerLikeDelete {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    &__like {
+      @include mixins.buttonComment;
+      &:hover {
+        background-color: colours.$two-dark;
+      }
+    }
+    &__id {
+      display: none;
+    }
+    &__delete {
+      @include mixins.buttonComment;
+      &:hover {
+        background-color: colours.$two-dark;
+      }
+    }
+  }
 }

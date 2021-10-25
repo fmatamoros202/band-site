@@ -865,7 +865,55 @@ p {
 
 .info-comment-description {
   display: flex;
+  justify-content: space-between;
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
+}
+.info-comment-description__text {
+  display: flex;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  padding-right: 0.5rem;
+}
+.info-comment-description__containerLikeDelete {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.info-comment-description__containerLikeDelete__like {
+  font-size: 0.6rem;
+  background-color: #323232;
+  color: #ffffff;
+  font-family: "AvenirNMedium";
+  height: 1.2rem;
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.25rem;
+  align-items: center;
+  margin: 0.25rem 0;
+}
+.info-comment-description__containerLikeDelete__like:hover {
+  background-color: #000000;
+}
+.info-comment-description__containerLikeDelete__id {
+  display: none;
+}
+.info-comment-description__containerLikeDelete__delete {
+  font-size: 0.6rem;
+  background-color: #323232;
+  color: #ffffff;
+  font-family: "AvenirNMedium";
+  height: 1.2rem;
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.25rem;
+  align-items: center;
+  margin: 0.25rem 0;
+}
+.info-comment-description__containerLikeDelete__delete:hover {
+  background-color: #000000;
 }/*# sourceMappingURL=bio.css.map */

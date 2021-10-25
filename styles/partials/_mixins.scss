@@ -192,3 +192,17 @@
   margin-bottom: 1rem;
   padding-bottom: 1rem;
 }
+
+@mixin buttonComment {
+  font-size: 0.6rem;
+  background-color: colours.$one-dark;
+  color: colours.$one-light;
+  font-family: "AvenirNMedium";
+  height: 1.2rem;
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.25rem;
+  align-items: center;
+  margin: 0.25rem 0;
+}

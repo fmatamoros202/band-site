@@ -3,9 +3,7 @@ const API_KEY = "api_key=2e915d20-0296-46f3-9c06-431d21e71b86"
 axios 
 .get("https://project-1-api.herokuapp.com/comments?"+API_KEY)
 .then(result=>{
-    console.log(result);
     let comments = result.data;
-    console.log(comments);
 
     comments.sort((a,b)=> b.timestamp - a.timestamp);
 
@@ -118,9 +116,41 @@ function displayComment (comments) {
     infoTimeStamp.classList.add('info-comment-container__timeStamp');
     infoTimeStamp.innerText = comments.timestamp;
 
-    let infoCommentDescription = document.createElement('p');
+    let infoCommentDescription = document.createElement('div');
     infoCommentDescription.classList.add('info-comment-description');
-    infoCommentDescription.innerText = comments.comment;
+
+    let infoCommentDescriptionText = document.createElement('p');
+    infoCommentDescriptionText.classList.add('info-comment-description__text');
+    infoCommentDescriptionText.innerText = comments.comment;
+    
+    let infoCommentDescriptionContainerLikeDelete = document.createElement('div');
+    infoCommentDescriptionContainerLikeDelete .classList.add('info-comment-description__containerLikeDelete');
+
+    let infoCommentDescriptionLikeBtn = document.createElement('a');
+    infoCommentDescriptionLikeBtn.classList.add('info-comment-description__containerLikeDelete__like');
+    infoCommentDescriptionLikeBtn.setAttribute('id',"likebutton")
+    infoCommentDescriptionLikeBtn.innerText = "Likes: "+`${comments.likes}`;
+
+    let infoCommentDescriptionIdElement = document.createElement('p');
+    infoCommentDescriptionIdElement.classList.add('info-comment-description__containerLikeDelete__id');
+    infoCommentDescriptionIdElement.innerText = comments.id;
+
+    let infoCommentDescriptionIdElement1 = document.createElement('p');
+    infoCommentDescriptionIdElement1.classList.add('info-comment-description__containerLikeDelete__id');
+    infoCommentDescriptionIdElement1.innerText = comments.id;
+
+    let infoCommentDescriptionDeleteBtn = document.createElement('a');
+    infoCommentDescriptionDeleteBtn.classList.add('info-comment-description__containerLikeDelete__delete');
+    infoCommentDescriptionDeleteBtn.innerText = "Delete";
+
+    infoCommentDescriptionContainerLikeDelete.appendChild(infoCommentDescriptionLikeBtn);
+    infoCommentDescriptionContainerLikeDelete.appendChild(infoCommentDescriptionIdElement);
+    infoCommentDescriptionContainerLikeDelete.appendChild(infoCommentDescriptionDeleteBtn);
+    infoCommentDescriptionContainerLikeDelete.appendChild(infoCommentDescriptionIdElement1);
+
+    infoCommentDescription.appendChild(infoCommentDescriptionText);
+    infoCommentDescription.appendChild(infoCommentDescriptionContainerLikeDelete);
+
 
     elementCommentInnerContainer.appendChild(elementCommentPhoto);
     elementCommentInnerContainer.appendChild(elementCommentInfo);
@@ -178,7 +208,6 @@ formEvent.addEventListener('submit',(e)=>{
 
         .then(axios.spread(function (objectPostedComment, objectComments) {
             
-            console.log(objectPostedComment);
             let postedComment = objectPostedComment.data;
             let comments = objectComments.data;
             comments.unshift(postedComment);
@@ -189,7 +218,6 @@ formEvent.addEventListener('submit',(e)=>{
                 element.timestamp = dateConvert(element.timestamp);
             });
 
-            console.log(comments);
         
             comments.forEach((element) =>{
                 displayComment(element);
@@ -212,6 +240,106 @@ formEvent.addEventListener('submit',(e)=>{
     
 
 });
+
+
+setTimeout(function(){
+    
+    let likeEvent = document.querySelectorAll(".info-comment-description__containerLikeDelete__like");
+    likeEvent.forEach((element)=>{
+
+        element.addEventListener('click',(e)=>{
+            let targetId =e.target.nextSibling.innerText
+            axios.all 
+                ([axios.put("https://project-1-api.herokuapp.com/comments/"+`${targetId}`+"/like?"+API_KEY)
+                ,axios.get("https://project-1-api.herokuapp.com/comments?"+API_KEY)])
+                .then(axios.spread(function (objectLikedComment, objectComments) {
+                    let likedComment = objectLikedComment.data;
+                    let comments =objectComments.data;
+                    comments.pop(likedComment);
+                    comments.unshift(likedComment);
+    
+                }))
+                .catch(error=>{
+                    console.log("Data is not available");
+                });
+                axios.get("https://project-1-api.herokuapp.com/comments?"+API_KEY)
+                .then(result=>{
+                    let comments = result.data;
+                
+                    comments.sort((a,b)=> b.timestamp - a.timestamp);
+                
+                    comments.map((element) =>{
+                        element.timestamp = dateConvert(element.timestamp);
+                    });
+                
+                
+                    comments.forEach((element) =>{
+                        displayComment(element);
+                    });
+                
+                })
+                .catch(error=>{
+                    console.log("Data is not available");
+                });
+                let elementsToRemove = document.querySelectorAll(".elements-comment__innerContainer");
+                elementsToRemove.forEach(comments => comments.remove());
+        });
+    })
+    
+}, 
+3000);
+
+setTimeout(function(){
+    
+    let deleteEvent = document.querySelectorAll(".info-comment-description__containerLikeDelete__delete");
+    deleteEvent.forEach((element)=>{
+
+        element.addEventListener('click',(e)=>{
+            let targetId =e.target.nextSibling.innerText
+            axios.all 
+                ([axios.delete("https://project-1-api.herokuapp.com/comments/"+`${targetId}`+"?"+API_KEY)
+                ,axios.get("https://project-1-api.herokuapp.com/comments?"+API_KEY)])
+                .then(axios.spread(function (objectDeletedComment, objectComments) {
+
+                    let deletedComment = objectDeletedComment.data;
+                    let comments =objectComments.data;
+                    comments.pop(deletedComment);
+    
+                }))
+                .catch(error=>{
+                    console.log("Data is not available");
+                });
+                axios.get("https://project-1-api.herokuapp.com/comments?"+API_KEY)
+                .then(result=>{
+                    let comments = result.data;
+                
+                    comments.sort((a,b)=> b.timestamp - a.timestamp);
+                
+                    comments.map((element) =>{
+                        element.timestamp = dateConvert(element.timestamp);
+                    });
+                
+                
+                    comments.forEach((element) =>{
+                        displayComment(element);
+                    });
+                
+                })
+                .catch(error=>{
+                    console.log("Data is not available");
+                });
+                let elementsToRemove = document.querySelectorAll(".elements-comment__innerContainer");
+                elementsToRemove.forEach(comments => comments.remove());
+        });
+    })
+    
+}, 
+3000);
+
+
+    
+
+
 
 
 

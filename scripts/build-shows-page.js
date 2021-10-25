@@ -10,13 +10,10 @@ function dateConvert (datetoConvert) {
 axios 
 .get("https://project-1-api.herokuapp.com/showdates?"+API_KEY)
 .then(result=>{
-    console.log(result);
     arrayApi = result.data;
-    console.log(arrayApi);
 
     arrayApi.map((element) => {
         element.date = dateConvert(element.date);
-        console.log(element.date);
     });
 
     arrayApi.forEach((element) =>{
